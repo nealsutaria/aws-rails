@@ -136,6 +136,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:description, :name, :name_other, :doctor, :pick_time, :description_other, prescription_ids:[], test_ids:[])
+      params.require(:record).permit(:description, :name, :name_other, :doctor, :prescription_name, :pick_time, :description_other, prescription_ids:[], test_ids:[])
     end
 end

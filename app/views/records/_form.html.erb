@@ -22,6 +22,9 @@
         <%= b.label %>
       </div>
       <% end %>
+
+    <%= f.input :prescription_name, label: "Prescription type" %>
+
       <strong> <%= f.label "Test Done?" %> </strong> <br />
     <%= f.collection_check_boxes :test_ids, Test.all, :id, :name do |b| %>
       <div class="collection-check-box">
@@ -31,7 +34,7 @@
       <% end %>
 
 
- <%= f.label :description, "Test type" %><br>
+ <%= f.label :description, "If Yes, Choose Test Type" %><br>
 
   <%= f.select(:description, [['Choose One', 'Choose One'],['None', 'None'], ['Tylenol', 'Tylenol'], ['Claritin', 'Claritin'], ['Coughing', 'Coughing'], ['Other', 'Other']], {}, {class: "form-control", id: "expense_description"}) %>
   <br>
