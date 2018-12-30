@@ -17,14 +17,7 @@ $(document).ready(function () {
 
  });
 
-$(document).ready(function () {
-      $('#expens_description').on('change',function(){
-       var selectedValue = $(this).val();
-        selectedValue == "Other" ? $("#otherDes").show() : $("#otherDes").hide();
-      });
 
-
- });
 
 
 // $(document).ready(function () {
