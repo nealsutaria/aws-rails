@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_212039) do
+ActiveRecord::Schema.define(version: 2018_12_30_224629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2018_12_30_212039) do
     t.index ["test_id"], name: "index_record_tests_on_test_id"
   end
 
+  create_table "record_xrays", force: :cascade do |t|
+    t.bigint "record_id"
+    t.bigint "xray_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_record_xrays_on_record_id"
+    t.index ["xray_id"], name: "index_record_xrays_on_xray_id"
+  end
+
   create_table "records", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -81,6 +90,8 @@ ActiveRecord::Schema.define(version: 2018_12_30_212039) do
     t.string "name_other"
     t.string "doctor"
     t.string "prescription_name"
+    t.text "comment"
+    t.string "rating"
     t.index ["medicine_id"], name: "index_records_on_medicine_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
@@ -111,12 +122,20 @@ ActiveRecord::Schema.define(version: 2018_12_30_212039) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "xrays", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "record_prescription_types", "prescriptiontypes"
   add_foreign_key "record_prescription_types", "records"
   add_foreign_key "record_prescriptions", "prescriptions"
   add_foreign_key "record_prescriptions", "records"
   add_foreign_key "record_tests", "records"
   add_foreign_key "record_tests", "tests"
+  add_foreign_key "record_xrays", "records"
+  add_foreign_key "record_xrays", "xrays"
   add_foreign_key "records", "medicines"
   add_foreign_key "records", "users"
 end

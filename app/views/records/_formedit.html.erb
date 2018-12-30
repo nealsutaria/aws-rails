@@ -24,6 +24,14 @@
 
       <%= f.input :prescription_name, label: "Prescription type" %>
 
+      <strong> <%= f.label "Xray Done?" %> </strong> <br />
+    <%= f.collection_check_boxes :xray_ids, Xray.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+       <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+
       <strong> <%= f.label "Test Done?" %> </strong> <br />
     <%= f.collection_check_boxes :test_ids, Test.all, :id, :name do |b| %>
       <div class="collection-check-box">
@@ -40,6 +48,13 @@
     <%= f.text_field :description_other, class: "form-control" %>
   </div>
 
+<%= f.label :rating, "Doctor Rating" %><br>
+
+   <%= f.select(:rating, [['Choose One', 'Choose One'],['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], {}, {class: "form-control"}) %>
+   <br>
+<%= f.input :comment, label: "Comments:" %>
+<br>
+  </div>
 
   </div>
 

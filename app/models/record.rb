@@ -10,6 +10,9 @@ class Record < ApplicationRecord
   has_many :record_prescription_types, dependent: :destroy
   has_many :prescriptiontypes, through: :record_prescription_types
 
+  has_many :record_xrays, dependent: :destroy
+  has_many :xrays, through: :record_xrays
+
   include PgSearch
   pg_search_scope :search_by_name,
     against: [ :name ],
