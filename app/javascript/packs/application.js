@@ -26,13 +26,26 @@ $(document).ready(function () {
 
  });
 
+$(document).ready(function () {
+  $("#otherReason").hide()
+      $('#Reason_description').on('change',function(){
+       var selectedValue = $(this).val();
+        selectedValue == "Other" ? $("#otherReason").show() : $("#otherReason").hide();
+      });
 
-// $(document).ready(function () {
-//   if ($('#expens_description').val() == "Other") {
-//     $("#otherDesc").show();
 
-//   } else {
-//     $("#otherDesc").hide();
-//   }
+ });
 
-//  });
+
+$(document).ready(function () {
+      $('#reasonedit_description').on('change',function(){
+       var selectedValue = $(this).val();
+        selectedValue == "Other" ? $("#otherReasonedit").show() : $("#otherReasonedit").hide();
+      });
+
+
+ });
+
+
+
+

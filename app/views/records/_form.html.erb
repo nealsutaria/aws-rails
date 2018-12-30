@@ -3,8 +3,18 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :pick_time, as: :string, input_html: { class: "datepicker"} %>
+    <%= f.input :pick_time, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
+    <%= f.label :name, "Reason" %><br>
+
+  <%= f.select(:name, [['Choose One', 'Choose One'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {}, {class: "form-control", id: "Reason_description"}) %>
+  <br>
+
+<div id="otherReason">
+    <%= f.text_field :name_other, class: "form-control" %>
+  </div>
+
+    <%= f.input :doctor, label: "Doctor name" %>
+
     <strong> <%= f.label "Prescription" %> </strong> <br />
     <%= f.collection_check_boxes :prescription_ids, Prescription.all, :id, :name do |b| %>
       <div class="collection-check-box">
@@ -21,7 +31,7 @@
       <% end %>
 
 
- <%= f.label :description, "Prescription type" %><br>
+ <%= f.label :description, "Test type" %><br>
 
   <%= f.select(:description, [['Choose One', 'Choose One'],['None', 'None'], ['Tylenol', 'Tylenol'], ['Claritin', 'Claritin'], ['Coughing', 'Coughing'], ['Other', 'Other']], {}, {class: "form-control", id: "expense_description"}) %>
   <br>
