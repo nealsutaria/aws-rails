@@ -10,9 +10,110 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_12_29_013230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "medicines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prescriptiontypes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "record_prescription_types", force: :cascade do |t|
+    t.bigint "record_id"
+    t.bigint "prescriptiontype_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescriptiontype_id"], name: "index_record_prescription_types_on_prescriptiontype_id"
+    t.index ["record_id"], name: "index_record_prescription_types_on_record_id"
+  end
+
+  create_table "record_prescriptions", force: :cascade do |t|
+    t.bigint "record_id"
+    t.bigint "prescription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescription_id"], name: "index_record_prescriptions_on_prescription_id"
+    t.index ["record_id"], name: "index_record_prescriptions_on_record_id"
+  end
+
+  create_table "record_tests", force: :cascade do |t|
+    t.bigint "record_id"
+    t.bigint "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_record_tests_on_record_id"
+    t.index ["test_id"], name: "index_record_tests_on_test_id"
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.datetime "pick_time"
+    t.bigint "medicine_id"
+    t.string "description"
+    t.string "description_other"
+    t.index ["medicine_id"], name: "index_records_on_medicine_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "record_prescription_types", "prescriptiontypes"
+  add_foreign_key "record_prescription_types", "records"
+  add_foreign_key "record_prescriptions", "prescriptions"
+  add_foreign_key "record_prescriptions", "records"
+  add_foreign_key "record_tests", "records"
+  add_foreign_key "record_tests", "tests"
+  add_foreign_key "records", "medicines"
+  add_foreign_key "records", "users"
 end

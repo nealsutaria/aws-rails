@@ -1,0 +1,72 @@
+
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/nealsutaria", height: 50 %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <a href="" class="navbar-wagon-item navbar-wagon-link"> Hello, <%= current_user.username %></a>
+      <span class="navbar-wagon-item navbar-wagon-link"> <%= link_to "New record", new_record_path %> </span>
+      <%= link_to "Search for record(s)", search_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "https://vignette.wikia.nocookie.net/tumblr-survivor-athena/images/7/7a/Blank_Avatar.png/revision/latest/scale-to-width-down/477?cb=20161204161729", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to records_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "My records") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li>
+              <%= link_to new_record_path do %>
+                <i class="fa-square"></i> <%= t(".p", default: "New record") %>
+              <% end %>
+            </li>
+        <li>
+              <%= link_to search_path do %>
+                <i class="fa fa-search"></i> <%= t(".p", default: "Search record(s)") %>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to records_path do %>
+                <i class="fa fa-user"></i> <%= t(".p", default: "My records") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>

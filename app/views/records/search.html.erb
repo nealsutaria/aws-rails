@@ -1,0 +1,87 @@
+ <h2> Search for record(s) using one or more field(s) </h2>
+<div class="wrapper">
+  <div class="row row-banner">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container">
+      <div class="logo-and-search">
+  <%= image_tag("", id: "logo") %>
+
+
+          <h5>Name</h5>
+        <%= form_tag search_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-item",
+          placeholder: "name"
+          %> <br>
+
+           <h5 > Prescription done?</h5>
+          <%= text_field_tag :query2,
+          params[:query2],
+          class: "form-control search-item",
+            placeholder: "Yes or no",
+            id: "address-input"
+            %>
+              <br>
+
+              <h5 > Prescription type?</h5>
+          <%= text_field_tag :query3,
+          params[:query3],
+          class: "form-control search-item",
+            placeholder: "Retinol",
+            id: "address-input"
+            %>
+              <br>
+
+
+
+            <%= submit_tag("Search", :id=>"button", :class=>"btn btn-secondary btn-lg btn-main", :name=>"submit") %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <%if @records %>
+    <div class="container">
+      <div class="row">
+        <% @records.each do |record| %>
+          <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+          <div class="card-description">
+        <a href=<%=record_path(record.id) %> class="links"><%=record.name %></a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small>
+        <span class="edit"> <small class="text-muted">  <%= link_to "Edit record", edit_record_path(record.id) %>  </small> </span>
+      </div>
+
+    </div>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+
+<%if @record_description_other %>
+    <div class="container">
+      <div class="row">
+        <% @record_description_other.each do |record| %>
+          <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+          <div class="card-description">
+        <a href=<%=record_path(record.id) %> class="links"><%=record.name %></a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small>
+        <span class="edit"> <small class="text-muted">  <%= link_to "Edit record", edit_record_path(record.id) %>  </small> </span>
+      </div>
+
+    </div>
+    <% end %>
+    </div>
+  </div>
+<% end %>

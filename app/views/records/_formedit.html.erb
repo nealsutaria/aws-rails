@@ -1,0 +1,38 @@
+<div class = "form"> <%= simple_form_for(@record) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :pick_time, as: :string, input_html: { class: "datepicker"} %>
+    <strong> <%= f.label "Prescription" %> </strong> <br />
+    <%= f.collection_check_boxes :prescription_ids, Prescription.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+      <strong> <%= f.label "Test Done?" %> </strong> <br />
+    <%= f.collection_check_boxes :test_ids, Test.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+       <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+
+ <%= f.label :description, "Prescription type" %><br>
+
+  <%= f.select(:description, [['Choose One', 'Choose One'],['None', 'None'], ['Tylenol', 'Tylenol'], ['Claritin', 'Claritin'], ['Coughing', 'Coughing'], ['Other', 'Other']], {}, {class: "form-control", id: "expens_description"}) %>
+  <br>
+  <div id="otherDes">
+    <%= f.text_field :description_other, class: "form-control" %>
+  </div>
+
+ <br>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+</div>

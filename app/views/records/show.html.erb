@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  Name:
+  <strong> <%= @record.name %> </strong>
+</p>
+  <p> <%= @pick_time.strftime("%B %d, %Y") %> </p>
+  <p> Were you given a prescription? <strong> <%= @prescription_names.to_sentence %> </strong>
+</p>
+
+<p> Prescription type: <strong> <%= (@record.description_other.present? ? @record.description_other : @record.description) %> </strong> </p>
+
+
+<p> Test Done? <strong> <%= @tests.to_sentence %> </strong> </p>
+
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
+
+ <!-- comment -->
+ <% if false %>
+<%  @prescription_names.each do |x| %>
+  <%= x %>
+  <% end %>
+<% end %>
