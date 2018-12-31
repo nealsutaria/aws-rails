@@ -42,7 +42,7 @@
 
  <%= f.label :description, "If Yes, Choose Test Type" %><br>
 
-  <%= f.select(:description, [['Choose One', 'Choose One'],['None', 'None'], ['Tylenol', 'Tylenol'], ['Claritin', 'Claritin'], ['Coughing', 'Coughing'], ['Other', 'Other']], {}, {class: "form-control", id: "expens_description"}) %>
+  <%= f.select(:description, [['None', 'None'], ['Blood Test', 'Blood Test'], ['Echocardiography', 'Echocardiography'], ['Colonoscopy', 'Colonoscopy'], ['Other', 'Other']], {}, {class: "form-control", id: "expens_description"}) %>
   <br>
   <div id="otherDes">
     <%= f.text_field :description_other, class: "form-control" %>

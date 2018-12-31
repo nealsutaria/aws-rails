@@ -7,6 +7,10 @@ flatpickr(".datepicker", {
 
 });
 
+
+
+
+
 $(document).ready(function () {
   $("#otherDesc").hide()
       $('#expense_description').on('change',function(){
@@ -17,6 +21,8 @@ $(document).ready(function () {
 
  });
 
+
+
 $(document).ready(function () {
       $('#expens_description').on('change',function(){
        var selectedValue = $(this).val();
@@ -25,6 +31,10 @@ $(document).ready(function () {
 
 
  });
+
+
+
+
 
 $(document).ready(function () {
   $("#otherReason").hide()
