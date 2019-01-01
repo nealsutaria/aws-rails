@@ -21,6 +21,10 @@ class RecordsController < ApplicationController
     @record.tests.each do |x|
       @tests << x.name
     end
+    @xray_name = []
+    @record.xrays.each do |x|
+      @xray_name << x.name
+    end
   end
 
   # GET /records/new
@@ -77,7 +81,7 @@ class RecordsController < ApplicationController
   end
 
   def search
-    if params[:query].present? && params[:query2].present? == false
+    if params[:query].present? && params[:query2].present? == false && params[:query3].present? == false
       @record = current_user.records
       @records= @record.search_by_name(params[:query])
     elsif params[:query3].present? == true && params[:query2].present? == true && params[:query].present? == false

@@ -6,31 +6,33 @@
   <%= image_tag("", id: "logo") %>
 
 
-          <h5 class = "search">Name</h5>
+          <h5 class = "search">Reason</h5>
         <%= form_tag search_path, method: :get do %>
         <%= text_field_tag :query,
         params[:query],
         class: "form-control search-item",
-          placeholder: "name"
+          placeholder: "Joint Pain"
           %> <br>
 
-           <h5 > Prescription done?</h5>
-          <%= text_field_tag :query2,
-          params[:query2],
+          <h5 > Test type?</h5>
+          <%= text_field_tag :query3,
+          params[:query3],
           class: "form-control search-item",
-            placeholder: "Yes or no",
+            placeholder: "Blood test",
             id: "address-input"
             %>
               <br>
 
-              <h5 > Prescription type?</h5>
-          <%= text_field_tag :query3,
-          params[:query3],
+           <h5 > Prescription type?</h5>
+          <%= text_field_tag :query2,
+          params[:query2],
           class: "form-control search-item",
             placeholder: "Retinol",
             id: "address-input"
             %>
               <br>
+
+
 
 
 

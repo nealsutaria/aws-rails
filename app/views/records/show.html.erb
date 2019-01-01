@@ -1,21 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class = "showform"
+<p> Date: <strong> <%= @pick_time.strftime("%B %d, %Y") %> </strong> </p>
 
 <p>
-  Name:
-  <strong> <%= @record.name %> </strong>
+  Reason:
+  <strong> <%= @record.name_other.present? ? @record.name_other : @record.name %> </strong>
 </p>
-  <p> <%= @pick_time.strftime("%B %d, %Y") %> </p>
+
+<p> Doctor: <strong> <%= @record.doctor %> </strong> </p>
   <p> Were you given a prescription? <strong> <%= @prescription_names.to_sentence %> </strong>
 </p>
+<p> Prescription type: <strong> <%=@record.prescription_name %> </strong> </p>
 
-<p> Prescription type: <strong> <%= (@record.description_other.present? ? @record.description_other : @record.description) %> </strong> </p>
-
+ <p> Xray? <strong> <%= @xray_name.to_sentence %> </strong> </p>
 
 <p> Test Done? <strong> <%= @tests.to_sentence %> </strong> </p>
 
+<p> Test type: <strong> <%= (@record.description_other.present? ? @record.description_other : @record.description) %> </strong> </p>
 
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<p> Doctor Rating: <strong> <%= @record.rating %></strong> </p>
+
+<p> Comments: <strong> <%= @record.comment %> </strong> </p>
+
+<%= link_to 'Edit', edit_record_path(@record), class: "showbutton" %> |
+<%= link_to 'Back', records_path, class: "showbutton" %>
 
  <!-- comment -->
  <% if false %>
@@ -23,3 +31,5 @@
   <%= x %>
   <% end %>
 <% end %>
+
+</div>
