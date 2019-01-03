@@ -86,6 +86,7 @@ class RecordsController < ApplicationController
       @records = @record.search_by_name(params[:query])
       @record_name_other = @record.search_by_name_other(params[:query])
 
+
     elsif params[:query3].present? == true && params[:query2].present? == true && params[:query].present? == false
     @record = current_user.records
     @prescriptions = Prescription.search_by_name(params[:query2])
@@ -107,6 +108,8 @@ class RecordsController < ApplicationController
       end
     end
 
+
+
     elsif params[:query2].present? && params[:query].present? == false && params[:query].present? == false
       @record = current_user.records
       @records = @record.search_by_prescription_name(params[:query2])
@@ -119,23 +122,42 @@ class RecordsController < ApplicationController
     @records = @record.search_by_description(params[:query3])
     @record_description_other = @record.search_by_description_other(params[:query3])
 
- elsif params[:query].present? && params[:query3].present?
+
+elsif params[:query].present? && params[:query3].present? && params[:query2].present? == false
       @recor = current_user.records
       @record_name = @recor.search_by_name_and_description(params[:query])
+      @record_name_new_other = @recor.search_by_name_and_description_other(params[:query])
       @record_description = @recor.search_by_name_and_description(params[:query3])
+      @record_description_new_other = @recor.search_by_name_and_description_other(params[:query3])
       @records = []
+       if @record_name
+        if @record_description
+          @record_name.each do |record|
+            @record_description.each do |desc|
+              if record == desc
+                @records << record
+            end
+          end
+        end
+        end
+      end
+
       if @record_name
-        @record_name.each do |record|
-          @record_description.each do |desc|
-            if record == desc
-              @records << record
+        if @record_description_new_other
+          @record_name.each do |record|
+            @record_description_new_other.each do |desc|
+              if record == desc
+                @records << record
           end
         end
       end
     end
-
   end
-end
+
+
+
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
