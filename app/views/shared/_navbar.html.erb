@@ -27,10 +27,17 @@
               <% end %>
             </li>
             <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-cog"></i> <%= t(".setting", default: "Settings") %>
+              <% end %>
+            </li>
+
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
+
           </ul>
         </div>
       </div>
@@ -61,6 +68,12 @@
                 <i class="fa fa-user"></i> <%= t(".p", default: "My records") %>
               <% end %>
             </li>
+             <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-cog"></i> <%= t(".setting", default: "Settings") %>
+              <% end %>
+            </li>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
