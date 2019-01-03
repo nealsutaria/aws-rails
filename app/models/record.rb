@@ -30,6 +30,24 @@ class Record < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+    pg_search_scope :search_by_name_other,
+    against: [ :name_other ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+     pg_search_scope :search_by_prescription_name,
+    against: [ :prescription_name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+    pg_search_scope :search_by_name_and_description,
+    against: [ :name, :description],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
 
 

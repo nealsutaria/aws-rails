@@ -66,6 +66,32 @@
   </div>
 <% end %>
 
+
+
+<%if @record_name_other %>
+    <div class="container">
+      <div class="row">
+        <% @record_name_other.each do |record| %>
+          <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+          <div class="card-description">
+        <a href=<%=record_path(record.id) %> class="links"><%=record.name %></a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small>
+        <span class="edit"> <small class="text-muted">  <%= link_to "Edit record", edit_record_path(record.id) %>  </small> </span>
+      </div>
+
+    </div>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+
 <%if @record_description_other %>
     <div class="container">
       <div class="row">
