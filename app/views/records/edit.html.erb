@@ -1,6 +1,14 @@
-<h1>Editing Record</h1>
+<h1 class = "recordtitle">Editing Record</h1>
 
 <%= render 'formedit', record: @record %>
+<br>
 
-<%= link_to 'Show', @record %> |
-<%= link_to 'Back', records_path %>
+<div class = "editspace"> <%= link_to 'Show Record Details', @record, class: "showbutton" %> |
+<%= link_to 'All Records', records_path, class: "showbutton" %> </div>
+<br>
+
+
+<div> <%= link_to 'Search for record(s)', search_path, class: "showbutton" %> </div>
+ <br>
+ <br>
+

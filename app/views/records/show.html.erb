@@ -22,8 +22,12 @@
 
 <p> Comments: <strong> <%= @record.comment %> </strong> </p>
 
-<%= link_to 'Edit', edit_record_path(@record), class: "showbutton" %> |
-<%= link_to 'Back', records_path, class: "showbutton" %>
+<div> <%= link_to 'Edit', edit_record_path(@record), class: "showbutton" %> |
+<%= link_to 'All Records', records_path, class: "showbutton" %> </div>
+<br>
+
+ <div> <%= link_to 'Search for record(s)', search_path, class: "showbutton" %> </div>
+
 
  <!-- comment -->
  <% if false %>
