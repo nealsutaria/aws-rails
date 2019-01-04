@@ -154,7 +154,29 @@ elsif params[:query].present? && params[:query3].present? && params[:query2].pre
     end
   end
 
+      if @record_name_new_other
+        if @record_description
+          @record_name_new_other.each do |record|
+            @record_description.each do |desc|
+              if record == desc
+                @records << record
+            end
+          end
+        end
+      end
+    end
 
+    if @record_name_new_other
+        if @record_description_new_other
+          @record_name_new_other.each do |record|
+            @record_description_new_other.each do |desc|
+              if record == desc
+                @records << record
+            end
+          end
+        end
+      end
+    end
 
     end
   end
