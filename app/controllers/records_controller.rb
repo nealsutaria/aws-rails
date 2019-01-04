@@ -178,6 +178,34 @@ elsif params[:query].present? && params[:query3].present? && params[:query2].pre
       end
     end
 
+  elsif params[:query].present? && params[:query2].present? && params[:query3].present? == false
+    @record = current_user.records
+    @record_reason = @record.search_by_name(params[:query])
+    @record_reason_other = @record.search_by_name_other(params[:query])
+    @record_prescription_name = @record.search_by_prescription_name(params[:query2])
+    @records = []
+
+    if @record_reason
+    @record_reason.each do |record|
+      @record_prescription_name.each do |pres|
+        if record == pres
+          @records << record
+        end
+      end
+    end
+  end
+
+  if @record_reason_other
+    @record_reason_other.each do |record|
+      @record_prescription_name.each do |pres|
+        if record == pres
+          @records << record
+        end
+      end
+    end
+  end
+
+
     end
   end
 
