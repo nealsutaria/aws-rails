@@ -89,25 +89,29 @@ class RecordsController < ApplicationController
 
     elsif params[:query3].present? == true && params[:query2].present? == true && params[:query].present? == false
     @record = current_user.records
-    @prescriptions = Prescription.search_by_name(params[:query2])
-    @records = []
-    @record_description_other = []
     @record_description = @record.search_by_description(params[:query3])
-    @record_description_other_other = @record.search_by_description_other(params[:query3])
-      if @record_description
-        @record_description.each do |record|
-        if record.prescriptions == @prescriptions
-          @records << record
-        end
-      end
-    else
-      @record_description_other_other.each do |record|
-        if record.prescriptions == @prescriptions
-          @record_description_other << record
+    @record_description_custom = @record.search_by_description_other(params[:query3])
+    @record_prescription_name = @record.search_by_prescription_name(params[:query2])
+    @records = []
+    if @record_description
+      @record_description.each do |record|
+        @record_prescription_name.each do |pres|
+          if pres == record
+            @records << record
+          end
         end
       end
     end
 
+    if @record_description_custom
+      @record_description_custom.each do |record|
+        @record_prescription_name.each do |pres|
+          if pres == record
+            @records << record
+          end
+        end
+      end
+    end
 
 
     elsif params[:query2].present? && params[:query].present? == false && params[:query].present? == false
