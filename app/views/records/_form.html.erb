@@ -3,7 +3,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= f.input :pick_time, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
+    <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
     <%= f.label :name, "Reason" %><br>
 
   <%= f.select(:name, [['Choose One', 'Choose One'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {}, {class: "form-control", id: "Reason_description"}) %>

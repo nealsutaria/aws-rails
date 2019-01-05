@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_224629) do
+ActiveRecord::Schema.define(version: 2019_01_05_021841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 2018_12_30_224629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.datetime "pick_time"
     t.bigint "medicine_id"
     t.string "description"
     t.string "description_other"
@@ -92,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_224629) do
     t.string "prescription_name"
     t.text "comment"
     t.string "rating"
+    t.datetime "date"
     t.index ["medicine_id"], name: "index_records_on_medicine_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
