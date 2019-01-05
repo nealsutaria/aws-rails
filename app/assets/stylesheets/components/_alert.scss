@@ -13,3 +13,17 @@
 .alert-warning {
   background: $red;
 }
+
+
+
+#footer {
+text-align:center;
+position:fixed;
+bottom:0px;
+height:18px;
+background: white;
+font-family: "Myriad Pro";
+font-size:11px;
+width:100%; // added
+box-shadow: -0 -1px 5px 0 rgba(0,0,0,0.07),-0 -1px 0 0 rgba(0,0,0,0.03)
+}
