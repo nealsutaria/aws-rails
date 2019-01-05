@@ -209,6 +209,78 @@ elsif params[:query].present? && params[:query3].present? && params[:query2].pre
     end
   end
 
+elsif params[:query].present? &&  params[:query3].present? && params[:query2].present?
+    @record = current_user.records
+
+    @record_reason = @record.search_by_name(params[:query])
+    @record_reason_other = @record.search_by_name_other(params[:query])
+
+    @record_description = @record.search_by_name_and_description(params[:query3])
+    @record_description_new_other = @record.search_by_name_and_description_other(params[:query3])
+
+    @record_prescription_name = @record.search_by_prescription_name(params[:query2])
+
+    @records = []
+
+    if @record_reason
+      if @record_description
+        @record_reason.each do |record|
+          @record_description.each do |desc|
+            @record_prescription_name.each do |pres|
+              if record == desc && record == pres
+                @records << record
+              end
+            end
+          end
+        end
+      end
+    end
+
+
+
+    if @record_reason
+      if @record_description_new_other
+        @record_reason.each do |record|
+          @record_description_new_other.each do |desc|
+            @record_prescription_name.each do |pres|
+              if record == desc && record == pres
+                @records << record
+              end
+            end
+          end
+        end
+      end
+    end
+
+
+    if @record_reason_other
+      if @record_description
+        @record_reason_other.each do |record|
+          @record_description.each do |desc|
+            @record_prescription_name.each do |pres|
+              if record == desc && record == pres
+                @records << record
+              end
+            end
+          end
+        end
+      end
+    end
+
+
+    if @record_reason_other
+      if @record_description_new_other
+        @record_reason_other.each do |record|
+          @record_description_new_other.each do |desc|
+            @record_prescription_name.each do |pres|
+              if record == desc && record == pres
+                @records << record
+              end
+            end
+          end
+        end
+      end
+    end
 
     end
   end
