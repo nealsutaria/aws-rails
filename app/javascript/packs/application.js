@@ -21,7 +21,13 @@ $(document).ready(function () {
 
  });
 
+if ($('#expens_description').val() == "Other") {
 
+  $("#otherDes").show();
+
+} else {
+$("#otherDes").hide();
+}
 
 $(document).ready(function () {
       $('#expens_description').on('change',function(){
@@ -45,6 +51,16 @@ $(document).ready(function () {
 
 
  });
+
+
+
+if ($('#reasonedit_description').val() == "Other") {
+
+  $("#otherReasonedit").show();
+
+} else {
+$("#otherReasonedit").hide();
+}
 
 
 $(document).ready(function () {

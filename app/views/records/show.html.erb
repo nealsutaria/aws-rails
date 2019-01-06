@@ -21,6 +21,8 @@
 <p> Doctor Rating: <strong> <%= @record.rating %></strong> </p>
 
 <p> Comments: <strong> <%= @record.comment %> </strong> </p>
+<br>
+<br>
 
 <div> <%= link_to 'Edit', edit_record_path(@record), class: "showbutton" %> |
 <%= link_to 'All Records', records_path, class: "showbutton" %> </div>
