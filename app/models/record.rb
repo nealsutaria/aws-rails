@@ -1,5 +1,6 @@
 class Record < ApplicationRecord
   validates :date, presence: true
+  validates :name, presence: true
 
 
   belongs_to :user

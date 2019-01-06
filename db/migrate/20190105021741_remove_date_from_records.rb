@@ -1,5 +1,0 @@
-class RemoveDateFromRecords < ActiveRecord::Migration[5.2]
-  def change
-    remove_column :records, :date, :datetime
-  end
-end

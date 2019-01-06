@@ -8,13 +8,16 @@
 <div class="container">
   <div class="row">
 <% @records.each do |record| %>
+
   <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+
         <div class="card-description">
-       <a href=<%=record_path(record.id) %> class="links"><%=record.name %></a>
+       <a href=<%=record_path(record.id) %> class="links"><%=(record.name_other.present? ? record.name_other : record.name) %></a>
       </div>
     </div>
+
     <div class="card-footer">
       <span class= "delete"> <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small> </span>
       <span class= "edit"> <small class="text-muted">  <%= link_to "Edit record", edit_record_path(record.id) %>  </small> </span>
@@ -23,7 +26,9 @@
   </div>
   <% end %>
    </div>
+
 </div>
+
 
 
 

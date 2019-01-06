@@ -16,14 +16,57 @@
 
 
 
-#footer {
-text-align:center;
-position:fixed;
-bottom:0px;
-height:18px;
-background: white;
-font-family: "Myriad Pro";
-font-size:11px;
-width:100%; // added
-box-shadow: -0 -1px 5px 0 rgba(0,0,0,0.07),-0 -1px 0 0 rgba(0,0,0,0.03)
+// #footer {
+// text-align:center;
+// position:fixed;
+// bottom:0px;
+// height:18px;
+// background: white;
+// font-family: "Myriad Pro";
+// font-size:11px;
+// width:100%;
+// box-shadow: -0 -1px 5px 0 rgba(0,0,0,0.07),-0 -1px 0 0 rgba(0,0,0,0.03)
+// }
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  // font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  font-size:11px;
+  height:18px;
+  padding-top: 2px;
+  background: white;
+}
+
+
+    // .card:hover {
+    //   opacity: 0.1;
+    //  }
+
+
+.custom-card:hover {
+  color: inherit;
 }

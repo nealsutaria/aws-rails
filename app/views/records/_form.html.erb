@@ -6,7 +6,7 @@
     <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
     <%= f.label :name, "Reason" %><br>
 
-  <%= f.select(:name, [['Choose One', 'Choose One'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {}, {class: "form-control", id: "Reason_description"}) %>
+  <%= f.select(:name, [['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "Reason_description"}) %>
   <br>
 
 <div id="otherReason">
@@ -52,7 +52,7 @@
 
   <%= f.label :rating, "Doctor Rating" %><br>
 
-   <%= f.select(:rating, [['Choose One', 'Choose One'],['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], {}, {class: "form-control"}) %>
+   <%= f.select(:rating, [['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], {:prompt => "Choose One"}, {class: "form-control"}) %>
    <br>
 <%= f.input :comment, label: "Comments:" %>
 <br>
