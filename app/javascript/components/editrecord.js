@@ -1,11 +1,11 @@
 import swal from 'sweetalert';
- const swalButton = document.getElementById('sweet-alert-demo'), form = document.querySelector('form');
-function bindSweetAlertButtonDemo() {
+ const swalButton = document.getElementById('sweet-alert-edit'), form = document.querySelector('form');
+function bindSweetAlertButtonEdit() {
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', (event) => {
       swal({
         title: "Success",
-        text: "You've added a record. Click on ok for the record details",
+        text: "You've edited the record. Click on ok for the record details",
         icon: "success"
 
       }).then(function(value){
@@ -18,6 +18,4 @@ function bindSweetAlertButtonDemo() {
   }
 }
 
-export {bindSweetAlertButtonDemo};
-
-
+export {bindSweetAlertButtonEdit};

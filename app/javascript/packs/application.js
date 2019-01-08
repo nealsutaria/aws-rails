@@ -11,6 +11,9 @@ import {bindSweetAlertButtonDemo} from "./../components/submitrecord.js";
 
 bindSweetAlertButtonDemo();
 
+import {bindSweetAlertButtonEdit} from "./../components/editrecord.js";
+
+bindSweetAlertButtonEdit();
 
 
 $(document).ready(function () {
