@@ -75,7 +75,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, danger: 'Record was successfully destroyed.' }
+      format.html { redirect_to records_url, danger: 'Record was successfully deleted.' }
       format.json { head :no_content }
     end
   end
