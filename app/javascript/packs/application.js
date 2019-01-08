@@ -1,4 +1,4 @@
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import flatpickr from 'flatpickr'
 import '/Users/nealsutaria/code/nealsutaria/checkboxes_part2/node_modules/flatpickr/dist/flatpickr.min.css'
 
@@ -7,7 +7,9 @@ flatpickr(".datepicker", {
 
 });
 
+import {bindSweetAlertButtonDemo} from "./../components/submitrecord.js";
 
+bindSweetAlertButtonDemo();
 
 
 
@@ -71,6 +73,19 @@ $(document).ready(function () {
 
 
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
