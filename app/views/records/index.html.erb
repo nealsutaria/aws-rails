@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+
+  <% flash.each do |key, value| %>
+    <% if key == "danger" %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+     <% end %>
+  <% end %>
+  <%= yield %>
+</div>
 
 <h1 class = "recordtitle">Records</h1>
 
