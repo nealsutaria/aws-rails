@@ -19,9 +19,12 @@
       <a class="card-link" href= <%=record_path(record.id) %> ></a>
     </div>
 
-    <div class="card-footer">
-      <span class= "delete"> <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small> </span>
+    <div class="card-footer editfooter">
       <span class= "edit"> <small class="text-muted">  <%= link_to "Edit record", edit_record_path(record.id) %>  </small> </span>
+    </div>
+
+     <div class="card-footer deletefooter">
+      <span class= "delete"> <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete %>  </small> </span>
     </div>
 
   </div>
