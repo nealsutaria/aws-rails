@@ -22,7 +22,7 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
 
         <div class="card-description">
-       <a href= "#" class="links"><%=(record.name_other.present? ? record.name_other : record.name) %></a>
+       <a href= "#" class="links"><%=(record.name == "Other" ? record.name_other : record.name) %></a>
       </div>
       <a class="card-link" href= <%=record_path(record.id) %> ></a>
     </div>

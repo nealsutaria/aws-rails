@@ -22,7 +22,7 @@
 
 <p>
   Reason:
-  <strong> <%= @record.name_other.present? ? @record.name_other : @record.name %> </strong>
+  <strong> <%= @record.name == "Other" ? @record.name_other : @record.name %> </strong>
 </p>
 
 <p> Doctor: <strong> <%= @record.doctor %> </strong> </p>
@@ -34,7 +34,7 @@
 
 <p> Test Done? <strong> <%= @tests.to_sentence %> </strong> </p>
 
-<p> Test type: <strong> <%= (@record.description_other.present? ? @record.description_other : @record.description) %> </strong> </p>
+<p> Test type: <strong> <%= (@record.description == "Other" ? @record.description_other : @record.description) %> </strong> </p>
 
 <p> Doctor Rating: <strong> <%= @record.rating %></strong> </p>
 

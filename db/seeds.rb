@@ -12,3 +12,6 @@ Prescription.create(name: "No")
 
 Xray.create(name: "Yes")
 Xray.create(name: "No")
+
+Test.create(name: "Yes")
+Test.create(name: "No")
