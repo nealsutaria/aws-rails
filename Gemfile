@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg_search'
 gem 'password_strength'
+gem 'dotenv-rails'
 
 
 group :development do
