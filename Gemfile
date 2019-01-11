@@ -22,6 +22,8 @@ gem 'pg_search'
 gem 'password_strength'
 gem 'dotenv-rails'
 gem 'figaro'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 
 group :development do

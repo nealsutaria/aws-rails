@@ -2,6 +2,7 @@ import swal from 'sweetalert';
 import flatpickr from 'flatpickr'
 import '/Users/nealsutaria/code/nealsutaria/checkboxes_part2/node_modules/flatpickr/dist/flatpickr.min.css'
 
+
 flatpickr(".datepicker", {
   altInput: true
 
@@ -76,13 +77,6 @@ $(document).ready(function () {
 
 
  });
-
-
-
-
-
-
-
 
 
 

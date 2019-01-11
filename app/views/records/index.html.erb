@@ -32,7 +32,7 @@
     </div>
 
      <div class="card-footer deletefooter">
-      <span class= "delete"> <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete, data: {confirm: "Are you sure?"} %>  </small> </span>
+      <span class= "delete"> <small class="text-muted">  <%= link_to "Delete record", record_path(record.id), method: :delete, id: "delete-link", :data => {:confirm => 'Are you sure?'} %>  </small> </span>
     </div>
 
   </div>
