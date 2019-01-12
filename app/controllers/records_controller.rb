@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_admin, only: :business
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   # GET /records
@@ -285,6 +286,9 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     end
   end
 
+  def business
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
@@ -295,4 +299,8 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     def record_params
       params.require(:record).permit(:description, :name, :name_other, :doctor, :prescription_name, :date, :rating, :comment, :description_other, :photo, prescription_ids:[], test_ids:[], xray_ids:[])
     end
+    def authorize_admin
+    redirect_to(root_path) unless current_user && current_user.business?
+    #redirects to previous page
+  end
 end

@@ -1,5 +1,6 @@
 class PrescriptionsController < ApplicationController
   before_action :set_prescription, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_developer, only: [:index, :show, :edit, :update, :new, :create]
 
   # GET /prescriptions
   # GET /prescriptions.json
@@ -71,4 +72,8 @@ class PrescriptionsController < ApplicationController
     def prescription_params
       params.require(:prescription).permit(:name)
     end
+    def authorize_developer
+    redirect_to(root_path) unless current_user && current_user.developer?
+    #redirects to previous page
+  end
 end

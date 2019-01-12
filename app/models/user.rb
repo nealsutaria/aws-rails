@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :records, dependent: :destroy
   validates_strength_of :password, :with => :email, :level => :good
+
 end

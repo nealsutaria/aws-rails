@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize_developer, only: [:index, :show, :edit, :update, :new, :create]
   # GET /tests
   # GET /tests.json
   def index
@@ -71,4 +70,8 @@ class TestsController < ApplicationController
     def test_params
       params.require(:test).permit(:name)
     end
+     def authorize_developer
+    redirect_to(root_path) unless current_user && current_user.developer?
+    #redirects to previous page
+  end
 end
