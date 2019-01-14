@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :tests
-  resources :prescriptions
-  resources :records
+  # resources :records
+  resources :records do
+    collection do
+      get :thirty_days
+      get :sixty_days
+    end
+  end
   devise_for :users
   root to: 'records#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

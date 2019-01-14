@@ -289,6 +289,16 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
   def business
   end
 
+  def thirty_days
+    @userrecords = current_user.records
+    @records = @userrecords.where('created_at > ?', 30.days.ago)
+  end
+
+  def sixty_days
+     @userrecords = current_user.records
+    @records = @userrecords.where('created_at > ?', 60.days.ago)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
