@@ -1,0 +1,7 @@
+
+<div class = "name_other">
+
+<% a = @recordarray %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(',') %>
+
+</div>

@@ -286,7 +286,17 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     end
   end
 
+
+
   def business
+    @records = current_user.records
+    @recordarray = []
+    @records.each do |record|
+      if record.name == "Other"
+      @recordarray << record.name_other
+    end
+  end
+
   end
 
   def thirty_days
