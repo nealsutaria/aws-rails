@@ -289,15 +289,17 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
 
 
   def business
-    @records = current_user.records
-    @recordarray = []
+    @records = Record.all
+    @record_test = []
+    @record_reason = record_reason(@records)
+    @record_array_reason_other = record_reason_other(@records)
     @records.each do |record|
-      if record.name == "Other"
-      @recordarray << record.name_other
+      if record.description != "None"
+        @record_test << record.description
+      end
     end
   end
 
-  end
 
   def thirty_days
     @userrecords = current_user.records
@@ -323,4 +325,25 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     redirect_to(root_path) unless current_user && current_user.business?
     #redirects to previous page
   end
+
+  def record_reason(items)
+    record_array_reason = []
+    items.each do |record|
+      if record.name != "Other"
+        record_array_reason << record.name
+      end
+    end
+    return record_array_reason
+  end
+
+def record_reason_other(items)
+    record_array_reason_other = []
+    items.each do |record|
+      if record.name == "Other"
+        record_array_reason_other << record.name_other
+      end
+    end
+    return record_array_reason_other
+  end
+
 end

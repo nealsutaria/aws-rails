@@ -1,7 +1,21 @@
+<h3> Reasons Data </h3>
+
+<div class = "name">
+<% a = @record_reason %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
+
+</div>
 
 <div class = "name_other">
+<% a = @record_array_reason_other %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
-<% a = @recordarray %>
-<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(',') %>
+</div>
+
+<h3> Test Data </h3>
+
+<div class = "name_other">
+<% a = @record_test %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
 </div>
