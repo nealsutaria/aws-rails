@@ -295,20 +295,6 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
   end
 
 
-
-  def business
-    @records = Record.all
-    @record_test = []
-    @record_reason = record_reason(@records)
-    @record_array_reason_other = record_reason_other(@records)
-    @records.each do |record|
-      if record.description != "None"
-        @record_test << record.description
-      end
-    end
-  end
-
-
   def thirty_days
     @userrecords = current_user.records
     @records = @userrecords.where('created_at > ?', 30.days.ago)
@@ -328,6 +314,28 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
       format.html
       format.js {render layout: false} # Add this line to you respond_to block
     end
+  end
+
+  def business
+    # @records = Record.all
+    # @ct = state_records("CT")
+    # @ct_record_reason = record_reason(@ct)
+    # @ct_record_array_reason_other = record_reason_other(@ct)
+    # @ct_record_test = record_test(@ct)
+    # @ct_record_test_other = record_test_other(@ct)
+    @TX = state_records('TX')
+    @TX_record_reason = record_reason(@TX)
+    @TX_record_array_reason_other = record_reason_other(@TX)
+    @TX_record_test = record_test(@TX)
+    @TX_record_test_other = record_test_other(@TX)
+
+    @CT = state_records('CT')
+    @CT_record_reason = record_reason(@CT)
+    @CT_record_array_reason_other = record_reason_other(@CT)
+    @CT_record_test = record_test(@CT)
+    @CT_record_test_other = record_test_other(@CT)
+
+
   end
 
   private
@@ -365,4 +373,32 @@ def record_reason_other(items)
     return record_array_reason_other
   end
 
+  def state_records(string)
+    state_records_array = []
+    Record.all.each do |record|
+      if record.user.state == string
+        state_records_array << record
+      end
+    end
+    return state_records_array
+  end
+
+  def record_test(items)
+    tests= []
+    items.each do |record|
+      if record.description != "None" && record.description != "Other"
+        tests << record.description
+      end
+    end
+    return tests
+  end
+def record_test_other(items)
+    tests_other= []
+    items.each do |record|
+      if record.description != "None" && record.description == "Other"
+        tests_other << record.description_other
+      end
+    end
+    return tests_other
+  end
 end
