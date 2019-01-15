@@ -7,6 +7,12 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     @records = current_user.records
+     respond_to do |format|
+      format.html
+      format.js {render layout: false} # Add this line to you respond_to block
+    end
+
+
   end
 
   # GET /records/1
@@ -304,11 +310,23 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
   def thirty_days
     @userrecords = current_user.records
     @records = @userrecords.where('created_at > ?', 30.days.ago)
+    if @records
+    respond_to do |format|
+        format.html
+        format.js
+    end
+  end
   end
 
+
+
   def sixty_days
-     @userrecords = current_user.records
+    @userrecords = current_user.records
     @records = @userrecords.where('created_at > ?', 60.days.ago)
+    respond_to do |format|
+      format.html
+      format.js {render layout: false} # Add this line to you respond_to block
+    end
   end
 
   private
