@@ -334,9 +334,19 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     @CT_record_array_reason_other = record_reason_other(@CT)
     @CT_record_test = record_test(@CT)
     @CT_record_test_other = record_test_other(@CT)
-
-
   end
+
+  def terms
+  end
+
+  def privacy
+  end
+
+  def websiteprivacy
+  end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -392,7 +402,7 @@ def record_reason_other(items)
     end
     return tests
   end
-def record_test_other(items)
+  def record_test_other(items)
     tests_other= []
     items.each do |record|
       if record.description != "None" && record.description == "Other"
