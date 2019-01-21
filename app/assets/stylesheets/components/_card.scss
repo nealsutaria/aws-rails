@@ -238,10 +238,19 @@ font-family: 'Playfair Display', serif;
 
     .card-description-home
 {position: absolute;
-  bottom: 0px;
-  left: 10px; }
+  bottom: 9px;
+  left: 10px;
+  text-align: center; }
 }
 
+@media only screen and (min-width: 1200px) {
+.card-description-home {
+  position: absolute;
+  bottom: 23px;
+  left: 400px;
+}
+
+}
 
 .state{
   padding-right: 45px;
@@ -284,5 +293,11 @@ td {
   border-left: solid 1px black;
 }
 
+.personal{
+  text-align: center;
+}
 
+.landing-content{
+  text-align: center;
+}
 
