@@ -1,14 +1,12 @@
 <table class="padding-table-columns">
   <tr>
     <th class = "state">State</th>
-     <th style="
-    text-align: center;
-"> Reasons Data</th>
+     <th class = "reasonsbus"> Reasons Data</th>
      <th class = "test"> Test Data </th>
   </tr>
 
   <tr>
-    <td class="line"> TX </td>
+    <td class="line"> Texas </td>
     <td> <% a = @TX_record_reason %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 <% a = @TX_record_array_reason_other %>
@@ -24,7 +22,7 @@
 
   </tr>
 <tr>
-    <td> CT </td>
+    <td> Connecticut </td>
     <td> <% a = @CT_record_reason %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 <% a = @CT_record_array_reason_other %>
@@ -38,6 +36,7 @@
 
     </td>
   </tr>
+
 
 
 

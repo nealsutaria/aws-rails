@@ -245,15 +245,21 @@ font-family: 'Playfair Display', serif;
 
 .state{
   padding-right: 45px;
+  text-align: center;
 }
 
 .test{
   padding-left: 102px;
+  text-align: center;
 }
 
 .padding-table-columns td
 {
     padding:0 5px 0 0; /* Only right padding*/
+}
+
+.reasonsbus{
+  text-align: center;
 }
 
 // table tr {
@@ -274,8 +280,8 @@ tr {
 }
 td {
   padding: 2em;
-  border-right: solid 1px #f00;
-  border-left: solid 2px #f00;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
 }
 
 
