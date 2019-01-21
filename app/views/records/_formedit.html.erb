@@ -22,7 +22,7 @@
       </div>
       <% end %>
 
-      <%= f.input :prescription_name, label: "Prescription type" %>
+      <%= f.input :prescription_name, label: "Prescription name" %>
 
       <strong> <%= f.label "Xray Done?" %> </strong> <br />
     <%= f.collection_check_boxes :xray_ids, Xray.all, :id, :name do |b| %>

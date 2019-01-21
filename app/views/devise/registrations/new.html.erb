@@ -12,6 +12,7 @@
     <%= f.input :password_confirmation, required: true %>
   </div>
 
+  <p class = "pterms"> By clicking Sign up, I agree to the website's <%= link_to 'Terms of Service', terms_path %>, <%= link_to 'Privacy Policy', privacy_path %> and <%= link_to 'Website Privacy', websiteprivacy_path %>.</p>
   <div class="form-actions signuppadding">
     <%= f.button :submit, "Sign up", class: 'btn btn-default' %>
   </div>

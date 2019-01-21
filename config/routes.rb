@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  root to: 'records#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "search", to: "records#search", as: "search"
   get "business", to: "records#business", as: "business"
@@ -15,4 +14,12 @@ Rails.application.routes.draw do
   get "terms", to: "records#terms", as: "terms"
   get "privacy", to: "records#privacy", as: "privacy"
   get "websiteprivacypage", to: "records#websiteprivacy", as: "websiteprivacy"
+  get "home", to: "records#home", as: "home"
+
+  # root to: 'records#home'
+
+  authenticated :user do
+    root 'records#new', as: :authenticated_poop
+  end
+  root to: 'records#home'
 end

@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_admin, only: :business
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, :only => [:home, :terms, :privacy, :websiteprivacy]
 
   # GET /records
   # GET /records.json
@@ -345,6 +346,8 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
   def websiteprivacy
   end
 
+  def home
+  end
 
 
 
@@ -411,4 +414,5 @@ def record_reason_other(items)
     end
     return tests_other
   end
+
 end

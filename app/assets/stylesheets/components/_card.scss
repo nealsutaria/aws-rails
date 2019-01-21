@@ -177,3 +177,73 @@ font-family: 'Playfair Display', serif;
 .websiteprivacy{
   padding: 5px;
 }
+
+// .image{
+//    background-image: url('/assets/logo1.png')
+// }
+
+.pterms{
+  font-size: 11px;
+}
+
+
+.homepage{
+  font-size: 61px;
+  text-align: center;
+  color: #7d6ed0;
+}
+
+.cardhome {
+  height: 281px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-top: 20px;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description-home {
+  position: absolute;
+  bottom: 23px;
+  left: 10px;
+}
+.card-description-home h2 {
+  font-size: 18px;
+  padding-bottom: 28px;
+  // text-align: center;
+
+}
+.card-description-home p {
+  font-size: 14px;
+  padding-bottom: 10px;
+    text-align: center;
+    font-size: 19px;
+
+}
+
+.cardbackground{
+  background-color: #908e89;
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .card-description-home
+{position: absolute;
+  bottom: 0px;
+  left: 10px; }
+}
+
+
+
+
+
+
