@@ -243,7 +243,40 @@ font-family: 'Playfair Display', serif;
 }
 
 
+.state{
+  padding-right: 45px;
+}
 
+.test{
+  padding-left: 102px;
+}
+
+.padding-table-columns td
+{
+    padding:0 5px 0 0; /* Only right padding*/
+}
+
+// table tr {
+//     border-bottom: 1px solid black;
+// }​
+
+// table tr:last-child {
+//     border-bottom: none;
+// }
+
+table {
+
+  padding:0em 2em;
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid black;
+}
+td {
+  padding: 2em;
+  border-right: solid 1px #f00;
+  border-left: solid 2px #f00;
+}
 
 
 

@@ -1,63 +1,50 @@
-<div class = "wrap">
+<table class="padding-table-columns">
+  <tr>
+    <th class = "state">State</th>
+     <th style="
+    text-align: center;
+"> Reasons Data</th>
+     <th class = "test"> Test Data </th>
+  </tr>
 
-<h3> Texas Data </h3>
-<h5> <strong> Reasons Data </strong> </h5>
-
-<div class = "name">
-<% a = @TX_record_reason %>
+  <tr>
+    <td class="line"> TX </td>
+    <td> <% a = @TX_record_reason %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
-
-</div>
-
-<div class = "name_other">
 <% a = @TX_record_array_reason_other %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
-</div>
-
-<h5> <strong> Test Data </strong> </h5>
-
-<div class = "test">
-<% a = @TX_record_test %>
+</td>
+<td> <% a = @TX_record_test %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
-
-</div>
-
-<div class = "test_other">
 <% a = @TX_record_test_other %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
-</div>
+    </td>
 
-
-
-<h3> Connecticut Data </h3>
-<h5> <strong> Reasons Data </strong> </h5>
-
-<div class = "name">
-<% a = @CT_record_reason %>
+  </tr>
+<tr>
+    <td> CT </td>
+    <td> <% a = @CT_record_reason %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
-
-</div>
-
-<div class = "name_other">
 <% a = @CT_record_array_reason_other %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
-</div>
-
-<h5> <strong> Test Data </strong> </h5>
-
-<div class = "test">
-<% a = @CT_record_test %>
+</td>
+<td> <% a = @CT_record_test %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
-
-</div>
-
-<div class = "test_other">
 <% a = @CT_record_test_other %>
 <%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
 
-</div>
+    </td>
+  </tr>
 
-</div>
+
+
+
+</table>
+
+
+
+
+
