@@ -214,11 +214,13 @@ font-family: 'Playfair Display', serif;
   position: absolute;
   bottom: 23px;
   left: 10px;
+  text-align: center;
 }
 .card-description-home h2 {
   font-size: 18px;
-  padding-bottom: 28px;
-  // text-align: center;
+  // padding-bottom: 28px;
+  padding-bottom: 21px;
+    // text-align: center;
 
 }
 .card-description-home p {
@@ -234,22 +236,31 @@ font-family: 'Playfair Display', serif;
 }
 
 
-@media only screen and (max-width: 400px) {
+// @media only screen and (max-width: 300px) {
 
-    .card-description-home
-{position: absolute;
-  bottom: 9px;
-  left: 10px;
-  text-align: center; }
-}
+//     .card-description-home
+// { font-size: 18px;
+//     padding-bottom: 100px;
+//     text-align: center;
+//   }
+
+// }
 
 @media only screen and (min-width: 1200px) {
 .card-description-home {
   position: absolute;
-  bottom: 23px;
+  bottom: 37px;
   left: 400px;
 }
-
+.cre{
+  padding-right: 158px;
+}
+.vie{
+    padding-right: 126px;
+}
+.hie{
+    padding-left: 29px;
+}
 }
 
 .state{
@@ -313,3 +324,6 @@ td {
 .signhome{
   margin-top: -12px;
 }
+
+
+
