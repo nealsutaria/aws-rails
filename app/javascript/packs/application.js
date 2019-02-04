@@ -80,6 +80,44 @@ $(document).ready(function () {
 
 
 
+$(document).ready(function () {
+  $("#vaccine_description").hide()
+      $('#Reason_description').on('change',function(){
+       var selectedValue = $(this).val();
+        selectedValue == "Vaccine" ? $("#vaccine_description").show() : $("#vaccine_description").hide();
+      });
+
+
+ });
+
+
+
+if ($('#reasonedit_description').val() == "Vaccine") {
+
+  $("#vaccineedit_description").show();
+
+} else {
+$("#vaccineedit_description").hide();
+}
+
+
+$(document).ready(function () {
+      $('#reasonedit_description').on('change',function(){
+       var selectedValue = $(this).val();
+        selectedValue == "Vaccine" ? $("#vaccineedit_description").show() : $("#vaccineedit_description").hide();
+      });
+
+
+ });
+
+
+
+
+
+
+
+
+
 
 
 

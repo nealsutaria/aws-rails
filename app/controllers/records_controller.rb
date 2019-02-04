@@ -365,7 +365,7 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:description, :name, :name_other, :doctor, :prescription_name, :date, :rating, :comment, :description_other, :photo, prescription_ids:[], test_ids:[], xray_ids:[])
+      params.require(:record).permit(:description, :name, :vaccine, :name_other, :doctor, :prescription_name, :date, :rating, :comment, :description_other, :photo, prescription_ids:[], test_ids:[], xray_ids:[])
     end
     def authorize_admin
     redirect_to(root_path) unless current_user && current_user.business?

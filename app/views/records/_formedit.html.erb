@@ -5,12 +5,15 @@
     <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
     <%= f.label :name, label: "Reason" %><br>
 
-  <%= f.select(:name, [['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "reasonedit_description"}) %>
+  <%= f.select(:name, [['Vaccine', 'Vaccine'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "reasonedit_description"}) %>
   <br>
 
 <div id="otherReasonedit">
     <%= f.text_field :name_other, class: "form-control" %>
   </div>
+
+
+  <%= f.select(:vaccine, [['Vaccinia (smallpox)', 'Vaccinia (smallpox)'],['Measles, mumps, rubella (MMR combined vaccine)', 'Measles, mumps, rubella (MMR combined vaccine)'], ['Varicella (chickenpox)', 'Varicella (chickenpox)'], ['Influenza (nasal spray)', 'Influenza (nasal spray)'], ['Rotavirus', 'Rotavirus'], ['Zoster (shingles)','Zoster (shingles)'],['Yellow fever','Yellow fever'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "vaccineedit_description"}) %>
 
   <%= f.input :doctor, label: "Doctor name" %>
 
