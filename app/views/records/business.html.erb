@@ -37,6 +37,21 @@
     </td>
   </tr>
 
+<tr>
+    <td> California </td>
+    <td> <% a = @CA_record_reason %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
+<% a = @CA_record_array_reason_other %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
+
+</td>
+<td> <% a = @CA_record_test %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
+<% a = @CA_record_test_other %>
+<%= a.uniq.map { |x| "#{x} = #{a.count(x)}" }.join(', ') %>
+
+    </td>
+  </tr>
 
 
 

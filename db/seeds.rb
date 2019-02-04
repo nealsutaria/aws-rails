@@ -20,7 +20,7 @@ user1 = User.create!(
   email: Faker::Internet.email,
   password: "Pie123##",
   username: Faker::BackToTheFuture.character,
-  state: "CT",
+  state: "CA",
   city: "Cedar Park",
   birthdate: "05/26/1999"
   )
@@ -28,7 +28,7 @@ user2 = User.create(
   email: Faker::Internet.email,
   password: "Pie123##",
   username: Faker::BackToTheFuture.character,
-  state: "CT",
+  state: "CA",
   city: "Cedar Park",
   birthdate: "05/26/1999"
   )
@@ -36,7 +36,7 @@ user3 = User.create(
   email: Faker::Internet.email,
   password: "Pie123##",
   username: Faker::BackToTheFuture.character,
-  state: "CT",
+  state: "CA",
   city: "Cedar Park",
   birthdate: "05/26/1999"
   )
@@ -44,7 +44,7 @@ user4 = User.create(
   email: Faker::Internet.email,
   password: "Pie123##",
   username: Faker::BackToTheFuture.character,
-  state: "CT",
+  state: "CA",
   city: "Cedar Park",
   birthdate: "05/26/1999"
   )
@@ -52,7 +52,7 @@ user5 = User.create(
   email: Faker::Internet.email,
   password: "Pie123##",
   username: Faker::BackToTheFuture.character,
-  state: "CT",
+  state: "CA",
   city: "Cedar Park",
   birthdate: "05/26/1999"
   )

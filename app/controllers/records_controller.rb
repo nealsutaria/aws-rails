@@ -335,6 +335,12 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     @CT_record_array_reason_other = record_reason_other(@CT)
     @CT_record_test = record_test(@CT)
     @CT_record_test_other = record_test_other(@CT)
+
+    @CA = state_records('CA')
+    @CA_record_reason = record_reason(@CA)
+    @CA_record_array_reason_other = record_reason_other(@CA)
+    @CA_record_test = record_test(@CA)
+    @CA_record_test_other = record_test_other(@CA)
   end
 
   def terms
