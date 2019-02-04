@@ -23,18 +23,18 @@
         <div class="dropdown">
          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
+            <li class = "pie">
               <%= link_to records_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "My records") %>
               <% end %>
             </li>
-            <li>
+            <li class = "pie">
               <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-cog"></i> <%= t(".setting", default: "Settings") %>
               <% end %>
             </li>
 
-            <li>
+            <li class = "pie">
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
@@ -55,29 +55,29 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li>
+        <li class = "pie">
               <%= link_to new_record_path do %>
                 <i class="fa fa-square"></i> <%= t(".p", default: "New record") %>
               <% end %>
             </li>
-        <li>
+        <li class = "pie">
               <%= link_to search_path do %>
                 <i class="fa fa-search"></i> <%= t(".p", default: "Search record(s)") %>
               <% end %>
             </li>
 
-            <li>
+            <li class = "pie">
               <%= link_to records_path do %>
                 <i class="fa fa-user"></i> <%= t(".p", default: "My records") %>
               <% end %>
             </li>
-             <li>
+             <li class = "pie">
               <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-cog"></i> <%= t(".setting", default: "Settings") %>
               <% end %>
             </li>
 
-            <li>
+            <li class = "pie">
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
@@ -93,12 +93,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-         <li>
+         <li class = "pie">
               <%= link_to new_user_registration_path do %>
                 <i class="fa fa-user"></i>  <%= t(".sign_in", default: "Sign Up") %>
               <% end %>
             </li>
-        <li>
+        <li class = "pie">
               <%= link_to new_user_session_path do %>
                 <i class="fa fa-arrow-right"></i> <%= t(".p", default: "Log in") %>
               <% end %>

@@ -43,11 +43,12 @@
   <% if @record.photo? %>
   <li class="thumbnail col-xs-2">
         <%= link_to @record.photo.url, class: :popup_link, target: :_blank do %>
-         <%= image_tag @record.photo.url  %>
+         <%= image_tag @record.photo.url, class: "imagesrc"  %>
        <% end %>
      </li>
      <% end %>
    </p>
+   <span class = "viewphoto"> (Click to view) </span>
 <br>
 <br>
 
