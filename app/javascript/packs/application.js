@@ -17,6 +17,7 @@ import {bindSweetAlertButtonEdit} from "./../components/editrecord.js";
 bindSweetAlertButtonEdit();
 
 
+
 $(document).ready(function () {
   $("#otherDesc").hide()
       $('#expense_description').on('change',function(){
@@ -95,9 +96,13 @@ $(document).ready(function () {
        }
 
       });
-
-
  });
+
+
+
+
+
+
 
 // selectedValue == "Vaccine" ? $("#vaccine_description").show() : $("#vaccine_description").hide();
 
@@ -167,17 +172,11 @@ $(document).ready(function () {
  });
 
 
-
 if ($('#reasonedit_description').val() != "Vaccine") {
 
   $("#otherVaccine").hide();
 
 }
-
-
-
-
-
 
 
 
