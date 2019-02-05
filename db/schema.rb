@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_073711) do
+ActiveRecord::Schema.define(version: 2019_02_04_232422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_073711) do
     t.datetime "date"
     t.string "photo"
     t.string "vaccine"
+    t.string "vaccine_other"
     t.index ["medicine_id"], name: "index_records_on_medicine_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end

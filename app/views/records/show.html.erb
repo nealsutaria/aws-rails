@@ -25,6 +25,13 @@
   <strong> <%= @record.name == "Other" ? @record.name_other : @record.name %> </strong>
 </p>
 
+<% if @record.name == "Vaccine" %>
+<p>
+  Vaccine type:
+  <strong> <%= @record.vaccine == "Other" ? @record.vaccine_other : @record.vaccine %> </strong>
+</p>
+<% end %>
+
 <p> Doctor: <strong> <%= @record.doctor %> </strong> </p>
   <p> Were you given a prescription? <strong> <%= @prescription_names.to_sentence %> </strong>
 </p>
@@ -51,6 +58,8 @@
    <span class = "viewphoto"> (Click to view) </span>
 <br>
 <br>
+
+
 
 
 
