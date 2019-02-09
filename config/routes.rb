@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "privacy", to: "records#privacy", as: "privacy"
   get "websiteprivacypage", to: "records#websiteprivacy", as: "websiteprivacy"
   get "home", to: "records#home", as: "home"
+  get "vaccines", to: "records#vaccines", as: "vaccines"
 
   # root to: 'records#home'
 

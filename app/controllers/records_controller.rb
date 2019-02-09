@@ -317,6 +317,21 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
     end
   end
 
+def vaccines
+    @userrecords = current_user.records
+    @records = []
+    @userrecords.each do |record|
+      if record.name == "Vaccine"
+         @records << record
+       end
+    end
+    respond_to do |format|
+      format.html
+      format.js {render layout: false} # Add this line to you respond_to block
+    end
+  end
+
+
   def business
     # @records = Record.all
     # @ct = state_records("CT")

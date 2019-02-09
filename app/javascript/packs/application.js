@@ -18,6 +18,24 @@ bindSweetAlertButtonEdit();
 
 
 
+
+$(document).ready(function () {
+      $('#vaccineedit_description').on('change',function(){
+       var selectedValue = $(this).val();
+        selectedValue == "Other" ? $("#otherVaccine").show() : $("#otherVaccine").hide();
+      });
+
+
+ });
+
+if ($('#vaccineedit_description').val() == "Other") {
+
+  $("#otherVaccine").show();
+
+} else {
+$("#otherVaccine").hide();
+}
+
 $(document).ready(function () {
   $("#otherDesc").hide()
       $('#expense_description').on('change',function(){
@@ -107,15 +125,15 @@ $(document).ready(function () {
 // selectedValue == "Vaccine" ? $("#vaccine_description").show() : $("#vaccine_description").hide();
 
 
-if ($('#reasonedit_description').val() == "Vaccine") {
+// if ($('#reasonedit_description').val() == "Vaccine") {
 
-  $("#vaccineedit_description").show();
+//   $("#vaccineedit_description").show();
 
-} else {
-  $("#otherVaccine").hide();
-  $("#vaccineedit_description").hide();
+// } else {
+//   $("#otherVaccine").hide();
+//   $("#vaccineedit_description").hide();
 
-}
+// }
 
 
 
@@ -136,21 +154,36 @@ $(document).ready(function () {
  });
 
 
+if ($('#reasonedit_description').val() == "Vaccine") {
+
+  $("#vaccineedit_description").show();
+
+} else {
+  $("#otherVaccine").hide();
+  $("#vaccineedit_description").hide();
+
+}
 
 // selectedValue == "Vaccine" ? $("#vaccineedit_description").show() : $("#vaccineedit_description").hide();
 
 
 
 
-if ($('#vaccineedit_description').val() == "Other") {
+// if ($('#vaccineedit_description').val() == "Other") {
 
-  $("#otherVaccine").show();
+//   $("#otherVaccine").show();
 
-} else {
-$("#otherVaccine").hide();
-}
+// } else {
+// $("#otherVaccine").hide();
+// }
 
+// if ($('#vaccineedit_description').val() == "Other") {
 
+//   $("#otherVaccine").show();
+
+// } else {
+// $("#otherVaccine").hide();
+// }
 
 $(document).ready(function () {
       $('#vaccine_description').on('change',function(){
@@ -161,22 +194,24 @@ $(document).ready(function () {
 
  });
 
+// if ($('#vaccineedit_description').val() == "Other") {
 
-$(document).ready(function () {
-      $('#vaccineedit_description').on('change',function(){
-       var selectedValue = $(this).val();
-        selectedValue == "Other" ? $("#otherVaccine").show() : $("#otherVaccine").hide();
-      });
+//   $("#otherVaccine").show();
+
+// } else {
+// $("#otherVaccine").hide();
+// }
+
+// $(document).ready(function () {
+//       $('#vaccineedit_description').on('change',function(){
+//        var selectedValue = $(this).val();
+//         selectedValue == "Other" ? $("#otherVaccine").show() : $("#otherVaccine").hide();
+//       });
 
 
- });
+//  });
 
 
-if ($('#reasonedit_description').val() != "Vaccine") {
-
-  $("#otherVaccine").hide();
-
-}
 
 
 
