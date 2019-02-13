@@ -103,7 +103,8 @@ config.action_mailer.smtp_settings = {
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-config.action_mailer.default_url_options = { :host => 'mhbright.com' }
+config.action_mailer.default_url_options = { :host => 'www.mhbright.com',
+protocol: 'https' }
 
 
 end
