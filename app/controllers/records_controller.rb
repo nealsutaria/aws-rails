@@ -35,6 +35,10 @@ class RecordsController < ApplicationController
     @record.xrays.each do |x|
       @xray_name << x.name
     end
+    if @record.photo.url
+      unsecure = @record.photo.url
+      @secure = @record.photo.url.gsub('http','https')
+    end
   end
 
   # GET /records/new
