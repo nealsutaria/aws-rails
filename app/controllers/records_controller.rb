@@ -41,6 +41,12 @@ class RecordsController < ApplicationController
     end
   end
 
+def destroy_picture
+ @record = Record.find(params[:id])
+  @record.remove_photo!
+  @record.save!
+  redirect_to @record
+end
   # GET /records/new
   def new
     @user = current_user

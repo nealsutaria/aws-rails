@@ -57,9 +57,12 @@
    </p>
    <span class = "viewphoto"> (Click to view) </span>
 <br>
-<br>
 
-
+<% if @record.photo? %>
+<%= link_to picdestroy_path(@record), method: :delete do %>
+  <i class="fa fa-trash deleteicon" aria-hidden="true"></i> (Delete)
+<% end %>
+<% end %>
 
 
 

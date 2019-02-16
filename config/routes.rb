@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "home", to: "records#home", as: "home"
   get "vaccines", to: "records#vaccines", as: "vaccines"
 
+  delete 'records/:id/picture', to: 'records#destroy_picture', as: 'picdestroy'
+
   # root to: 'records#home'
 
   authenticated :user do
