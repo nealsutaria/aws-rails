@@ -55,7 +55,9 @@
      </li>
      <% end %>
    </p>
+   <% if @record.photo? %>
    <span class = "viewphoto"> (Click to view) </span>
+   <% end %>
 <br>
 
 <% if @record.photo? %>
