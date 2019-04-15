@@ -7,7 +7,7 @@
    <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :state, as: :select, collection: (us_states), required: true, autofocus: true  %>
    <%= f.input :city, required: true, autofocus: true %>
-<%= f.input :birthdate, required: true, autofocus: true, placeholder: "mm/dd/yyyy", label: "Birthday"%>
+
     <%= f.input :password, required: true, hint: ("8 characters minimum" if @minimum_password_length < 8), label: "Password- <span style='font-weight: lighter; font-size: 15px;'>must be 8 characters and must include at least one lowercase letter, one uppercase letter, one digit, and one special character</span>".html_safe %>
     <%= f.input :password_confirmation, required: true %>
   </div>

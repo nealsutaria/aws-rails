@@ -1,10 +1,8 @@
 <div class = "bodynew">
 <h1 class = "recordtitle">New Record</h1>
 
-<%= render 'form', record: @record %>
-
-
 <div class="button-margin marginbottombutton"> <%= link_to 'All Records', records_path, class: "showbutton allbuttonmargin" %>  <%= link_to 'Search for record(s)', search_path, class: "showbutton allbuttonmargin" %> </div>
 
+<%= render 'form', record: @record %>
 
 </div>
