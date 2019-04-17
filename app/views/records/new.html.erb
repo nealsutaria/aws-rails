@@ -3,6 +3,14 @@
 
 <div class="button-margin marginbottombutton"> <%= link_to 'All Records', records_path, class: "showbutton allbuttonmargin" %>  <%= link_to 'Search for record(s)', search_path, class: "showbutton allbuttonmargin" %> </div>
 
+<div style="
+    margin-bottom: 18px;
+"> <strong style="
+    padding-left: 11px;
+"> * = required </strong> </div>
+
+
+
 <%= render 'form', record: @record %>
 
 </div>
