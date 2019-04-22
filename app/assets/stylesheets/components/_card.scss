@@ -192,10 +192,11 @@ font-family: 'Playfair Display', serif;
   font-size: 32px;
   text-align: center;
   color: #7d6ed0;
+  margin-top: 7px;
 }
 
 .cardhome {
-  height: 281px;
+  height: 270px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -308,6 +309,7 @@ td {
 
 .loginhome{
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .youfont{
@@ -357,4 +359,8 @@ td {
 
 .testnote{
   font-size: 15px;
+}
+
+.makerecord{
+  font-size: 19px !important;
 }
