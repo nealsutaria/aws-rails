@@ -4,6 +4,14 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
     <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
+
+  <%= f.input :photo, label: "Receipt(s) Upload:" %>
+  <%= f.input :photo_cache, as: :hidden %>
+
+
+  <div> <strong> Optional Info: </strong> </div>
+
+
     <%= f.label :name, label: "Reason" %><br>
 
   <%= f.select(:name, [['Vaccine', 'Vaccine'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "Reason_description"}) %>
@@ -17,6 +25,7 @@
   <div id="otherVaccine">
     <%= f.text_field :vaccine_other, class: "form-control" %>
   </div>
+
 
     <%= f.input :doctor, label: "Doctor name" %>
 
@@ -61,8 +70,7 @@
    <br>
 <%= f.input :comment, label: "Comments:" %>
 <br>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
+
   </div>
 
   <div class="form-actions">
