@@ -7,7 +7,8 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = current_user.records
+    @recordsUser = current_user.records
+    @records = @recordsUser.order(:date)
      if @records
     respond_to do |format|
         format.html
