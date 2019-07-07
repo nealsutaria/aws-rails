@@ -3,6 +3,10 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
     <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
+
+<%= f.input :photo, label: "Receipt(s) Upload:" %>
+<%= f.input :photo_cache, as: :hidden %>
+
     <%= f.label :name, label: "Reason" %><br>
 
   <%= f.select(:name, [['Vaccine', 'Vaccine'],['Regular Checkup', 'Regular Checkup'], ['Cold', 'Cold'], ['Skin Disorder', 'Skin Disorder'], ['Joint Pain', 'Joint Pain'], ['Cholesterol Problems','Cholesterol Problems'],['High Blood Pressure','High Blood Pressure'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "reasonedit_description"}) %>
@@ -62,8 +66,6 @@
 <%= f.input :comment, label: "Comments:" %>
 <br>
 
-<%= f.input :photo, label: "Receipt(s) Upload:" %>
-<%= f.input :photo_cache, as: :hidden %>
 
 
 
@@ -73,7 +75,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary', id: 'sweet-alert-edit' %>
+    <%= f.button :submit, class: 'btn btn-primary updateButton', id: 'sweet-alert-edit' %>
   </div>
 <% end %>
 

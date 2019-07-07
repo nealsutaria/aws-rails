@@ -3,12 +3,12 @@
 <%= render 'formedit', record: @record %>
 <br>
 
-<div class = "editspace"> <%= link_to 'Show Record Details', @record, class: "showbutton" %> |
-<%= link_to 'All Records', records_path, class: "showbutton" %> </div>
+<div class = "editspace"> <%= link_to 'Show Record Details', @record, class: "showbutton updateButton" %> |
+<%= link_to 'All Records', records_path, class: "showbutton updateButton" %> </div>
 <br>
 
 
-<div> <%= link_to 'Search for record(s)', search_path, class: "showbutton" %> </div>
+<div> <%= link_to 'Search for record(s)', search_path, class: "showbutton updateButton" %> </div>
  <br>
  <br>
 

@@ -311,7 +311,10 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
 
   def thirty_days
     @userrecords = current_user.records
-    @records = @userrecords.where('created_at > ?', 30.days.ago)
+    @recordsSort = @userrecords.where('date > ?', 30.days.ago)
+
+    @records = @recordsSort.order(:date)
+
     respond_to do |format|
       format.html
       format.js {render layout: false} # Add this line to you respond_to block
@@ -323,7 +326,10 @@ elsif params[:query].present? &&  params[:query3].present? && params[:query2].pr
 
   def sixty_days
     @userrecords = current_user.records
-    @records = @userrecords.where('created_at > ?', 60.days.ago)
+    @records = @userrecords.where('date > ?', 60.days.ago)
+
+    @records = @recordsSort.order(:date)
+
     respond_to do |format|
       format.html
       format.js {render layout: false} # Add this line to you respond_to block
