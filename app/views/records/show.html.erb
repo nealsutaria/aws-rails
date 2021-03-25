@@ -41,7 +41,15 @@
 
 <p> Test Done? <strong> <%= @tests.to_sentence %> </strong> </p>
 
-<p> Test type: <strong> <%= (@record.description == "Other" ? @record.description_other : @record.description) %> </strong> </p>
+
+  <% if  @record.description == "Other"%>
+    <p> Test type: <strong> <%= @record.description_other %> </strong> </p>
+  <% elsif  @record.description == "None"%>
+    <p> Test type:  </p>
+  <% else %>
+    <p> Test type: <strong> <%= @record.description %> </strong> </p>
+  <% end %>
+
 
 <p> Doctor Rating: <strong> <%= @record.rating %></strong> </p>
 

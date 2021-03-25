@@ -5,11 +5,10 @@
   <div class="form-inputs">
     <%= f.input :date, as: :string, input_html: { class: "datepicker"}, label: "Date" %>
 
-  <%= f.input :photo, label: "Receipt(s) Upload:" %>
-  <%= f.input :photo_cache, as: :hidden %>
 
 
-  <div class = "optionalInfo"> <strong> Optional Info: </strong> </div>
+
+
 
 
     <%= f.label :name, label: "Reason" %><br>
@@ -20,12 +19,14 @@
 <div id="otherReason">
     <%= f.text_field :name_other, class: "form-control" %>
   </div>
- <%= f.select(:vaccine, [['Vaccinia (smallpox)', 'Vaccinia (smallpox)'],['Measles, mumps, rubella (MMR combined vaccine)', 'Measles, mumps, rubella (MMR combined vaccine)'], ['Varicella (chickenpox)', 'Varicella (chickenpox)'], ['Influenza (nasal spray)', 'Influenza (nasal spray)'], ['Rotavirus', 'Rotavirus'], ['Zoster (shingles)','Zoster (shingles)'],['Yellow fever','Yellow fever'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "vaccine_description"}) %>
+ <%= f.select(:vaccine, [['Moderna 1','Moderna 1'], ['Moderna 2', 'Moderna 2'], ['Pfizer 1', 'Pfizer 1'], ['Pfizer 2', 'Pfizer 2'], ['Johnson & Johnson', 'Johnson & Johnson'],['Vaccinia (smallpox)', 'Vaccinia (smallpox)'],['Measles, mumps, rubella (MMR combined vaccine)', 'Measles, mumps, rubella (MMR combined vaccine)'], ['Varicella (chickenpox)', 'Varicella (chickenpox)'], ['Influenza (nasal spray)', 'Influenza (nasal spray)'], ['Rotavirus', 'Rotavirus'], ['Zoster (shingles)','Zoster (shingles)'],['Yellow fever','Yellow fever'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "vaccine_description"}) %>
 
   <div id="otherVaccine">
     <%= f.text_field :vaccine_other, class: "form-control" %>
   </div>
-
+  <div class = "optionalInfo"> <strong> Optional Info: </strong> </div>
+  <%= f.input :photo, label: "Receipt(s) Upload:" %>
+  <%= f.input :photo_cache, as: :hidden %>
 
     <%= f.input :doctor, label: "Doctor name" %>
 

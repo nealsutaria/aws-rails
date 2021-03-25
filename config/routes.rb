@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   delete 'records/:id/picture', to: 'records#destroy_picture', as: 'picdestroy'
 
+  get "users", to: "users#index", as:"users"
+
   # root to: 'records#home'
 
   authenticated :user do
