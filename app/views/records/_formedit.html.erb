@@ -15,7 +15,7 @@
   </div>
 
 
-  <%= f.select(:vaccine, [ ['Moderna 1','Moderna 1'], ['Moderna 2', 'Moderna 2'], ['Pfizer 1', 'Pfizer 1'], ['Pfizer 2', 'Pfizer 2'], ['Johnson & Johnson', 'Johnson & Johnson'],['Vaccinia (smallpox)', 'Vaccinia (smallpox)'],['Measles, mumps, rubella (MMR combined vaccine)', 'Measles, mumps, rubella (MMR combined vaccine)'], ['Varicella (chickenpox)', 'Varicella (chickenpox)'], ['Influenza (nasal spray)', 'Influenza (nasal spray)'], ['Rotavirus', 'Rotavirus'], ['Zoster (shingles)','Zoster (shingles)'],['Yellow fever','Yellow fever'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "vaccineedit_description"}) %>
+  <%= f.select(:vaccine, [ ['Moderna 1 (COVID-19)','Moderna 1 (COVID-19)'], ['Moderna 2 (COVID-19)', 'Moderna 2 (COVID-19)'], ['Pfizer 1 (COVID-19)', 'Pfizer 1 (COVID-19)'], ['Pfizer 2 (COVID-19)', 'Pfizer 2 (COVID-19)'], ['Johnson & Johnson (COVID-19)', 'Johnson & Johnson (COVID-19)'],['Vaccinia (smallpox)', 'Vaccinia (smallpox)'],['Measles, mumps, rubella (MMR combined vaccine)', 'Measles, mumps, rubella (MMR combined vaccine)'], ['Varicella (chickenpox)', 'Varicella (chickenpox)'], ['Influenza (nasal spray)', 'Influenza (nasal spray)'], ['Rotavirus', 'Rotavirus'], ['Zoster (shingles)','Zoster (shingles)'],['Yellow fever','Yellow fever'],['Other', 'Other']], {:prompt => "Choose One"}, {class: "form-control", id: "vaccineedit_description"}) %>
   <br>
     <div id="otherVaccine">
     <%= f.text_field :vaccine_other, class: "form-control" %>
