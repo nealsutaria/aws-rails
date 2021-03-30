@@ -10,7 +10,12 @@
 
         <div class="card-description">
        <a href= "#" class="links"><%=(record.date.strftime("%B %d, %Y")) %></a>
-       <h3 class = "recordnameindex"> <%=(record.name) %> </h3>
+       <h3 class = "recordnameindex"> <%=(
+       if record.name == "Other"
+        record.name_other
+        else
+          record.name
+          end) %> </h3>
        <h5 class = "recorddetails"> Press for record details </h5>
       </div>
       <a class="card-link" href= <%=record_path(record.id) %> ></a>
@@ -30,3 +35,4 @@
 
 </div>
 </div>
+
