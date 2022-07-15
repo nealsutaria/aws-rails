@@ -358,23 +358,36 @@ def vaccines
     # @ct_record_array_reason_other = record_reason_other(@ct)
     # @ct_record_test = record_test(@ct)
     # @ct_record_test_other = record_test_other(@ct)
-    @TX = state_records('TX')
-    @TX_record_reason = record_reason(@TX)
-    @TX_record_array_reason_other = record_reason_other(@TX)
-    @TX_record_test = record_test(@TX)
-    @TX_record_test_other = record_test_other(@TX)
 
-    @CT = state_records('CT')
-    @CT_record_reason = record_reason(@CT)
-    @CT_record_array_reason_other = record_reason_other(@CT)
-    @CT_record_test = record_test(@CT)
-    @CT_record_test_other = record_test_other(@CT)
 
-    @CA = state_records('CA')
-    @CA_record_reason = record_reason(@CA)
-    @CA_record_array_reason_other = record_reason_other(@CA)
-    @CA_record_test = record_test(@CA)
-    @CA_record_test_other = record_test_other(@CA)
+    # @TX = state_records('TX')
+    # @TX_record_reason = record_reason(@TX)
+    # @TX_record_array_reason_other = record_reason_other(@TX)
+    # @TX_record_test = record_test(@TX)
+    # @TX_record_test_other = record_test_other(@TX)
+
+    # @CT = state_records('CT')
+    # @CT_record_reason = record_reason(@CT)
+    # @CT_record_array_reason_other = record_reason_other(@CT)
+    # @CT_record_test = record_test(@CT)
+    # @CT_record_test_other = record_test_other(@CT)
+
+    # @CA = state_records('CA')
+    # @CA_record_reason = record_reason(@CA)
+    # @CA_record_array_reason_other = record_reason_other(@CA)
+    # @CA_record_test = record_test(@CA)
+    # @CA_record_test_other = record_test_other(@CA)
+
+    @records = Record.all
+    respond_to do |format|
+      format.xlsx {
+        response.headers[
+          'Content-Disposition'
+        ] = 'attachment; filename="business.xlsx"'
+      }
+      format.html { render :business }
+    end
+
   end
 
   def terms
@@ -401,9 +414,11 @@ def vaccines
     def record_params
       params.require(:record).permit(:description, :name, :vaccine, :vaccine_other, :name_other, :doctor, :prescription_name, :date, :rating, :comment, :description_other, :photo, prescription_ids:[], test_ids:[], xray_ids:[])
     end
-    def authorize_admin
-    redirect_to(root_path) unless current_user && current_user.business?
+
+  def authorize_admin
+      redirect_to(root_path) unless current_user && current_user.business?
     #redirects to previous page
+
   end
 
   def record_reason(items)

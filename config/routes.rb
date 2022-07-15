@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   delete 'records/:id/picture', to: 'records#destroy_picture', as: 'picdestroy'
 
   get "users", to: "users#index", as:"users"
+  get "business", to: "records#business", as: "business"
 
   # root to: 'records#home'
 

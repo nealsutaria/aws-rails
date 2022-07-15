@@ -1,0 +1,34 @@
+wb = xlsx_package.workbook
+
+
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+
+  wb.add_worksheet(name: "Business") do |sheet|
+    # Add a title row
+    sheet.add_row ["Health Data"], style: project_heading
+    # Add the date this was downloaded
+    sheet.add_row ["Downloaded at:", Time.now.strftime("%b %-d, %Y")]
+    # Add a blank row
+    sheet.add_row []
+    # Create the header row
+    sheet.add_row ["State", "Reason Type", "Test Type"], style: heading
+    # Create entries for each item
+    @records.each do |record|
+      if record.name == "Other" && record.description == "Other"
+        sheet.add_row [record.user.state, record.name_other, record.description_other]
+      elsif record.name == "Other" && record.description != "Other"
+        sheet.add_row [record.user.state, record.name_other, record.description]
+      elsif record.name != "Other" && record.description == "Other"
+        sheet.add_row [record.user.state, record.name. record.description_other]
+      elsif record.name != "Other" && record.description != "Other"
+        sheet.add_row [record.user.state, record.name. record.description]
+      end
+    end
+  end
+end
+
+
+
