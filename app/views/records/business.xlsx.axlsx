@@ -24,7 +24,7 @@ wb.styles do |style|
       elsif record.name != "Other" && record.description == "Other"
         sheet.add_row [record.user.state, record.name. record.description_other]
       elsif record.name != "Other" && record.description != "Other"
-        sheet.add_row [record.user.state, record.name. record.description]
+        sheet.add_row [record.user.state, record.name, record.description]
       end
     end
   end
