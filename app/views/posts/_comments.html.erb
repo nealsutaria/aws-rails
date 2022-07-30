@@ -1,0 +1,8 @@
+<% if comments.any? %>
+<% comments.each do |comment| %>
+<div class="comment">
+    <%= link_to comment.user.email, profile_path(comment.user.email)%>:
+    <%= simple_format comment.message %>
+</div>
+<% end %>
+<% end %>

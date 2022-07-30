@@ -415,3 +415,42 @@ td {
   font-family: 'Playfair Display', serif;
 }
 
+
+
+
+.upvote, .downvote {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #000;
+
+  &.active {
+    color: #ff0000;
+  }
+
+  &:hover {
+    color: #ff0000;
+    cursor: pointer;
+  }
+
+}
+
+// .card1 {
+// position: relative;
+// display: flex;
+// flex-direction: column;
+// min-width: 0;
+// word-wrap: break-word;
+// background-color: #fff;
+// background-clip: border-box;
+// border: 1px solid rgba(0,0,0,0.125);
+// border-radius: 0.25rem;
+
+// }
+
+// .col-8, *::before, *::after{
+//   box-sizing: border-box;
+// }
+
+

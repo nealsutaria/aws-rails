@@ -7,6 +7,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :records, dependent: :destroy
+
+  has_many :subscriptions
+  has_many :communities, through: :subscriptions
+  has_many :posts
+  has_many :comments
+  has_many :votes
+
   # validates_strength_of :password, :with => :email, :level => :good
   # validates :password, format: { with: /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[[:^alnum:]])/, message: "must include at least one lowercase letter, one uppercase letter, one digit, and one special character" }
 PASSWORD_FORMAT = /\A
@@ -90,4 +97,13 @@ STATES =
     ['Wyoming', 'WY']
   ]
 
+def upvoted_post_ids
+    self.votes.where(upvote: true).pluck(:post_id)
+    # Vote.includes(:account).where(account_id: self.id, upvote: true).pluck(:post_id)
+  end
+
+  def downvoted_post_ids
+    self.votes.where(upvote: false).pluck(:post_id)
+    # Vote.includes(:account).where(account_id: self.id, upvote: false).pluck(:post_id)
+  end
 end

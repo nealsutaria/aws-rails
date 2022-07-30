@@ -1,0 +1,110 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 11px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.row1{
+  margin-left: 6px;
+}
+
+
+
+.commbut{
+  margin-top: -104px;
+}
+
+.name{
+margin-left: 12px;
+}
+
+.buttonpost{
+  margin-top: 10px;
+}
+
+.count{
+font-style: italic;
+font-size: medium;
+}
+
+.rules{
+font-style: italic;
+font-size: medium;
+}
+
+.newleft{
+  margin-left: 18px;
+}
+
+.posttitle{
+  font-size: 42px;
+}
+
+
+.card-trip1 {
+  overflow: hidden;
+  background: rgb(240, 230, 239);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 11px;
+}
+
+.commbutton{
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.commleft{
+  margin-left: 25px;
+}
+
+.commname{
+  margin-top: 25px;
+}
+
+.commentbuttondown{
+  margin-top: 10px;
+}
+
+.twobuttons{
+margin-left: 10px;
+}
+
+.topcommbutton{
+  margin-top: 10px;
+}

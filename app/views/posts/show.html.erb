@@ -1,0 +1,26 @@
+<div class="card-trip1">
+
+<div class="row1">
+    <div class="col-1 text-center">
+
+        </div>
+    <div class="col-11">
+
+        <h2 class = "posttitle"><%= @post.title %></h2>
+
+    <%= simple_format @post.body %>
+
+    <div id="post-comments">
+        <h5>Comment as <%= link_to current_user.email, profile_path(current_user.email) %></h5>
+        <%= form_for @comment, remote: true do |f| %>
+            <%= f.hidden_field :post_id, value: @post.id %>
+            <%= f.text_area :message, placeholder: "Your comment goes here", class: "form-control" %>
+            <%= f.submit "Submit comment", class: "btn btn-success mt-3 mb-3 commentbuttondown"%>
+        <% end %>
+        <br> <%= render partial: "posts/comments", locals: { comments: @post.comments } %>
+    </div>
+    </div>
+</div>
+
+</div>
+
