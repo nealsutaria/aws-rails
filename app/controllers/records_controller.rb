@@ -411,8 +411,6 @@ def vaccines
       #redirect to customer root
       elsif current_user.business == true
         redirect_to(business_path)
-    elsif user_signed_in? == false
-      redirect_to(home_path)
       #redirect to admin root
     end
   end

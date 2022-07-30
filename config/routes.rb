@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  get "u/:email", to: "public#profile", constraints: { email: /[^\/]+/}, as: "profile"
+  get "u/:username", to: "public#profile", constraints: { username: /[^\/]+/}, as: "profile"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "search", to: "records#search", as: "search"
   # get "business", to: "records#business", as: "business"
@@ -39,7 +39,6 @@ Rails.application.routes.draw do
 
 
 
-  # root to: 'records#home'
 
   # authenticated :user do
   #   root 'records#new', as: :authenticated_poop
@@ -47,6 +46,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root :to => 'records#routes'
   end
+  root to: 'records#home'
   # root to: 'records#home'
   get "public", to: "public#index", as: "public"
 end
