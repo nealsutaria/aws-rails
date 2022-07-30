@@ -14,6 +14,7 @@
 
       <!-- Links when logged in -->
       <!-- <a href="" class="navbar-wagon-item navbar-wagon-link"> Hello, <%= current_user.username %></a> -->
+      <span class="navbar-wagon-item navbar-wagon-link"> <%= link_to "Health Forum", public_path%> </span>
       <span class="navbar-wagon-item navbar-wagon-link"> <%= link_to "New record", new_record_path %> </span>
       <%= link_to "Search for record(s)", search_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
@@ -56,6 +57,11 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li class = "pie">
+              <%= link_to public_path do %>
+                <i class="fa fa-square"></i> <%= t(".p", default: "Health Forum") %>
+              <% end %>
+            </li>
         <li class = "pie">
               <%= link_to new_record_path do %>
                 <i class="fa fa-square"></i> <%= t(".p", default: "New record") %>
