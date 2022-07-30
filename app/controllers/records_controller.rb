@@ -407,7 +407,7 @@ def vaccines
   def routes
     if user_signed_in? == true
       if current_user.business == false
-        redirect_to(new_record_path)
+        redirect_to(public_path)
       #redirect to customer root
       elsif current_user.business == true
         redirect_to(business_path)
