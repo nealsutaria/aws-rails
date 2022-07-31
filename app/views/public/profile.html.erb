@@ -3,7 +3,7 @@
     <%= render partial: "posts/list", locals: { posts: @posts } %>
     </div>
     <div class="col-sm-4">
-    <p class="h4"><%= @profile.email %></p>
+    <p class="h4"><%= @profile.username %></p>
     <p>Created day: <%= @profile.created_at.strftime("%m/%d/%Y") %></p>
     </div>
 </div>
