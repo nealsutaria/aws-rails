@@ -9,7 +9,7 @@ Communities:
 <% if @communities.size > 0 %>
 <% @communities.each do |community| %>
 
-<div class="cards cards1">
+<div class="cards cards1 movecardleft">
 
 <h3 class = "commname"><%= link_to community.name, community %></h3>
 <span class = "fontsmall"> Summary: <%= simple_format community.summary %> </span>
