@@ -29,6 +29,15 @@ class PostsController < ApplicationController
             end
         end
 
+
+      # def destroy
+      #   @post.destroy
+      #   respond_to do |format|
+      #     format.html { redirect_to records_url, danger: 'Post was successfully deleted.' }
+      #     format.json { head :no_content }
+      #   end
+      # end
+
         private
 
         def set_posts

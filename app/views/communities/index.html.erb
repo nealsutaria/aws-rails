@@ -9,10 +9,13 @@ Communities:
 <% if @communities.size > 0 %>
 <% @communities.each do |community| %>
 
-<div class="card">
+<div class="cards cards1">
+
 <h3 class = "commname"><%= link_to community.name, community %></h3>
-Rules: <%= simple_format community.rules %>
+<span class = "fontsmall"> Summary: <%= simple_format community.summary %> </span>
+<span class = "fontsmall"> Rules: <%= simple_format community.rules %> </span>
 </div>
+
 <% end %>
 <% else %>
     <p>No communities to display</p>
@@ -20,3 +23,5 @@ Rules: <%= simple_format community.rules %>
 </div>
 
 <div class = "twobuttons upcoming"><%= link_to "Popular Posts", public_path, class: "btn btn-primary mt-4 twobuttons topcommbutton"%> </div>
+
+
