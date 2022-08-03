@@ -23,7 +23,7 @@
         <p class="h5 commcolor">About this community:</p>
             <p class="mt-2 commcolor"><%= @community.summary %></p>
         </div>
-        <br>
+
         <p class = "count"><%= pluralize @subscriber_count, "member" %> </p>
         <small class = "rules">
             Rules: <%= simple_format @community.rules %>
