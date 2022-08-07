@@ -3,10 +3,10 @@
 <div class="comment">
     <%= link_to comment.user.username, profile_path(comment.user.username)%>:
     <%= simple_format comment.message %>
-    <div id="vote-actionscomments-<%= comment.id %>" class="votecomment" data-id="<%= comment.id %>">
-                    <div class="fa fa-arrow-up upvote  <%= is_upvoted comment %>"></div>
-                    <span class="font-weight-bold score"><%= comment.score %></span>
-                    <div class="fa fa-arrow-down downvote  <%= is_downvoted comment %>"></div>
+    <div id="vote-actionscomments-<%= comment.id %>" class="votecomment horizontal" data-id="<%= comment.id %>">
+                    <div class="fa fa-arrow-up upvote horiz <%= is_upvoted comment %>"></div>
+                    <span class="font-weight-bold score horiz2"><%= comment.score %></span>
+                    <div class="fa fa-arrow-down downvote horiz3 <%= is_downvoted comment %>"></div>
                 </div>
 
 </div>
