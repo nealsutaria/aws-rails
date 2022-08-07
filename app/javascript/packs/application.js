@@ -233,5 +233,28 @@ $(function() {
   })
 })
 
+$(function() {
+  console.log("jquery is loaded")
+
+  $(".votecomment").on("click", ".upvote, .downvote", function(){
+    var comment_id = $(this).parent().data("id"),
+      is_upvote = $(this).hasClass("upvote")
+    console.log("comment_id", comment_id)
+    console.log("is_upvote", is_upvote)
+    $.ajax({
+      url: "/comment/votecomment",
+      method: "POST",
+      data: { comment_id: comment_id, upvote: is_upvote },
+      success: function(){
+        console.log("success")
+      }
+    })
+  })
+})
+
+
+
+
+
 
 

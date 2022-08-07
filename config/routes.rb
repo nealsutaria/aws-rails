@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :comments, only: [:create]
   post "post/vote", to: "votes#create"
+  post "comment/votecomment", to: "votecomments#create"
 
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_15_230650) do
+ActiveRecord::Schema.define(version: 2022_10_18_230651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2022_10_15_230650) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "upvotes", default: 0
+    t.integer "downvotes", default: 0
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -173,6 +175,16 @@ ActiveRecord::Schema.define(version: 2022_10_15_230650) do
     t.integer "karma", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votecomments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "comment_id"
+    t.boolean "upvote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_votecomments_on_comment_id"
+    t.index ["user_id"], name: "index_votecomments_on_user_id"
   end
 
   create_table "votes", force: :cascade do |t|

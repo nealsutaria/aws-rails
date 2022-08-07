@@ -30,6 +30,12 @@ class VotesController < ApplicationController
         end
     end
 
+
+
+
+
+
+
     private
 
     def vote_params
