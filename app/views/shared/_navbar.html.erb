@@ -272,7 +272,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-       <span class="navbar-wagon-item navbar-wagon-link"> <%= link_to "Health Forum", public_path%> </span>
+
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
