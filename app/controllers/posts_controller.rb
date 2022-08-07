@@ -42,6 +42,7 @@ class PostsController < ApplicationController
 
         def set_posts
             @post = Post.includes(:comments).find(params[:id])
+            @postcomments = @post.comments.sort_by{ |p| p.score }.reverse
         end
 
         # refactor scope method, place it in Post model or Subscription model?

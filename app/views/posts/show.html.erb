@@ -17,7 +17,7 @@
             <%= f.text_area :message, placeholder: "Your comment goes here", class: "form-control" %>
             <%= f.submit "Submit comment", class: "btn btn-success mt-3 mb-3 commentbuttondown"%>
         <% end %>
-        <br> <%= render partial: "posts/comments", locals: { comments: @post.comments } %>
+        <br> <%= render partial: "posts/comments", locals: { comments: @postcomments } %>
     </div>
     </div>
 </div>
@@ -25,3 +25,5 @@
 </div>
 
 <div class = "newleft"><%= link_to "View This Community's Posts", community_path(@post.community_id), class: "btn btn-primary mt-4"%> </div>
+
+<div class = "newleft poppadding"><%= link_to "Popular Posts", public_path, class: "btn btn-primary mt-4"%> </div>
