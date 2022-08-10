@@ -1,39 +1,73 @@
- <h1 class = "homepage"> Welcome to MHBright! </h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+
 
 <!-- <span class = "personal"> <h4 class = "youfont"> The Healthcare Website for you!</h4> -->
-<span class = "personal"> <h4 class = "youfont makerecord"> <strong> Mhbright’s health forum will let you ask questions and get answers on topics such as acne, mental health, anxiety, weight loss, diet, sprains, hair, diseases, etc. from other people like you!
- </strong></h4>
-<span class = "personal"> <h4 class = "youfont makerecord"> <strong> Upload your medical receipts and records! </strong></h4>
-<p> <strong> We will never sell your personal data! </strong> </p> </span>
+<span class = "personal"> <h4 class = "youfont makerecord"> </h4>
+
 <!-- <p class = "personal testnote"> <strong> Note: </strong> This website is going through testing, so it is research in progress. Expect some downtime and malfunctions. </p>
  -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <!-- insert <div class="card"> -->
-        <div class="cardhome cardbackground">
-
-  <div class="card-description-home">
-    <h2 class = "cre movedown">Make an account in order to use the health forum to talk about topics such as acne, mental health, weight loss, diet, hair, etc.! </h2>
-    <h2 class = "cre" > <span class = "movedown2">Create communities, make posts and comment on other peoples' posts all related to health! </span> </h2>
-    <h2 class = "vie">Upload medical receipts!</h2>
-    <h2 class = "hie">Create, view and search for your health records and receipts!</h2>
-
-  </div>
 
 
-</div>
-    </div>
 
-  </div>
-</div>
+
+
 <br>
-<div class = "landing-content">
-<div class="landing-button signhome">
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/135/2560/1920.jpg?hmac=MAh0eBIqBNEgND6D2vgcIBIQ4BE1jzewN1QQWDfBBEY);">
+  <div class="container">
+    <h1>Welcome to MHBright!</h1>
+    <br>
+    <p class="changetextsize">Mhbright’s health forum will let you ask questions and get answers on topics such as acne, mental health, anxiety, weight loss, diet, sprains, hair, diseases, etc. from other people like you!</p>
+    <p>Upload your medical receipts and records!</p>
+     <p>We will never sell your personal data!</p>
+     <br>
+     <div class="landing-button signhome">
     <%= link_to  "Sign up",  new_user_registration_path, class: "btn btn-default" %>
 
   <span class="landing-button loginhome">
     <%= link_to  "Log in",  new_user_session_path, class: "btn btn-default" %>
   </span>
   </div>
+  </div>
 </div>
+
+
+<br>
+
+ <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0 col-sm-4">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fa fa-users"></i></div>
+                        <h2 class="h4 fw-bolder boldtext">Health Forum</h2>
+                        <p>Make an account in order to use the health forum to talk about topics such as acne, mental health, weight loss, diet, hair, etc.!</p>
+
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0 col-sm-4">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fa fa-comments"></i></div>
+                        <h2 class="h4 fw-bolder boldtext">Ways to Use Health Forum</h2>
+                        <p>Create communities, make posts and comment on other peoples' posts all related to health!</p>
+
+
+
+                    </div>
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-file-earmark-plus-fill"></i></div>
+                        <h2 class="h4 fw-bolder boldtext">Health Receipts and Records</h2>
+                        <p>Upload medical receipts! Create, view and search for your health records and receipts! </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
