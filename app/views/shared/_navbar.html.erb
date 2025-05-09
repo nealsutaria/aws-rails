@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
 <% if user_signed_in? && current_user.business == false  %>
 <div class="navbar-wagon">
   <!-- Logo -->
@@ -21,24 +23,26 @@
 
       <!-- Avatar with dropdown menu -->
 
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li class = "pie">
               <%= link_to records_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "My records") %>
+              <i class="bi bi-person"></i>
+                <%= t(".profile", default: "My records") %>
               <% end %>
             </li>
             <li class = "pie">
               <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-cog"></i> <%= t(".setting", default: "Settings") %>
+                <i class="bi bi-gear"></i> <%= t(".setting", default: "Settings") %>
               <% end %>
             </li>
 
             <li class = "pie">
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-window-close"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="bi bi-person-dash"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
 

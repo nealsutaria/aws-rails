@@ -1,4 +1,4 @@
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
 
 <% posts.each do |post| %>
@@ -7,9 +7,9 @@
 
   <div class="card-trip-infos">
     <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
-                    <div class="fa fa-arrow-up upvote  <%= is_upvoted post %>"></div>
+                    <div class="fa fa-arrow-up bi bi-arrow-up upvote  <%= is_upvoted post %>"></div>
                     <span class="font-weight-bold score"><%= post.score %></span>
-                    <div class="fa fa-arrow-down downvote  <%= is_downvoted post %>"></div>
+                    <div class="fa fa-arrow-down bi bi-arrow-down downvote  <%= is_downvoted post %>"></div>
                 </div>
     <div>
         <div class="col-11">

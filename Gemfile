@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.4.4'
+# ruby '2.4.4'
+ruby '2.5.1'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
@@ -11,7 +12,8 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.0.9'
+# gem 'font-awesome-sass', '~> 5.0.9'
+gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
