@@ -19,6 +19,8 @@ set :keep_assets, 3
 set :db_local_clean, true
 set :db_remote_clean, true
 
+
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do

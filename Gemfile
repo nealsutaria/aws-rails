@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # ruby '2.4.4'
-ruby '2.5.1'
+ruby '3.1.0'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
@@ -31,9 +31,9 @@ gem 'faker'
 gem 'rubyzip', '= 1.0.0'
 gem 'axlsx', '= 2.0.1'
 gem 'axlsx_rails'
-gem 'net-ssh', '>= 6.0.0'
-gem 'ed25519', '~> 1.2'
-gem 'bcrypt_pbkdf', '~> 1.0'
+# gem 'net-ssh', '>= 6.0.0'
+# gem 'ed25519', '~> 1.2'
+# gem 'bcrypt_pbkdf', '~> 1.0'
 
 
 group :development do
