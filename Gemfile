@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 # ruby '2.4.4'
-ruby '3.1.0'
+ruby '3.1.1'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 0.21'
+gem 'pg', '~> 1.1'
 gem 'puma'
-gem 'rails', '5.2.0'
+gem 'rails', '6.1.0'
 gem 'redis'
 
 
@@ -34,6 +34,8 @@ gem 'axlsx_rails'
 # gem 'net-ssh', '>= 6.0.0'
 # gem 'ed25519', '~> 1.2'
 # gem 'bcrypt_pbkdf', '~> 1.0'
+gem 'concurrent-ruby', '1.3.4'
+gem 'psych', '< 4'
 
 
 group :development do
