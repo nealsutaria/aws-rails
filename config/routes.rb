@@ -44,8 +44,9 @@ Rails.application.routes.draw do
   # authenticated :user do
   #   root 'records#new', as: :authenticated_poop
   # end
-  # authenticated :user do
-  #   root :to => 'records#routes'
+  root to: "records#routes", as: :authenticated_root
+  # authenticated(:user) do
+  #   root 'records#routes'
   # end
   root to: 'records#home'
   # root to: 'records#home'

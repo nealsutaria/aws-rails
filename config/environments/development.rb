@@ -71,5 +71,5 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-config.action_mailer.default_url_options = { :host => '10.145.113.132' }
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

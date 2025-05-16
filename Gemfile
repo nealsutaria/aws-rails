@@ -36,7 +36,7 @@ gem 'axlsx_rails'
 # gem 'bcrypt_pbkdf', '~> 1.0'
 gem 'concurrent-ruby', '1.3.4'
 gem 'psych', '< 4'
-
+gem 'uri'
 
 group :development do
   gem 'capistrano', '~> 3.10', require: false

@@ -36,10 +36,17 @@ class RecordsController < ApplicationController
     @record.xrays.each do |x|
       @xray_name << x.name
     end
-    if @record.photo.url
-      unsecure = @record.photo.url
-      @secure = @record.photo.url.gsub('http','https')
+
+
+    # if @record.photo.url
+    #   unsecure = @record.photo.url
+    #   @secure = @record.photo.url.gsub('http','https')
+    # end
+
+    if @record.photo
+      @secure = "https://res.cloudinary.com/neals/#{@record.photo.identifier}"
     end
+
   end
 
 def destroy_picture
@@ -407,7 +414,7 @@ def vaccines
   def routes
     if user_signed_in? == true
       if current_user.business == false
-        redirect_to(public_path)
+        redirect_to(new_record_path)
       #redirect to customer root
       elsif current_user.business == true
         redirect_to(business_path)
