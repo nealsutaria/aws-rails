@@ -8,7 +8,8 @@ set :application, 'aws-rails'
 set :repo_url, 'git@github.com:nealsutaria/aws-rails.git'
 #FIXME add location on the server here
 set :deploy_to, '/home/deploy/aws-rails'
-set :branch, ENV['BRANCH'] if ENV['BRANCH']
+# set :branch, ENV['BRANCH'] if ENV['BRANCH']
+set :branch, :main
 
 set :linked_files, %w{config/database.yml config/master.key}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
