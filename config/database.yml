@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: checkboxes_part2_production
-  username: checkboxes_part2
-  password: <%= ENV['CHECKBOXES_PART2_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: Rails.application.credentials.dig(:production. :db_password)
