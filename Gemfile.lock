@@ -304,7 +304,6 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
-    uri (1.0.3)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -349,6 +348,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen (~> 3.0.5)
+  net-ssh
   pg (~> 1.1)
   pg_search
   pry-byebug
@@ -363,9 +363,8 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
-  uri
   web-console (>= 3.3.0)
-  webpacker (>= 3.1.11)
+  webpacker (~> 5.x)
 
 RUBY VERSION
    ruby 3.1.1p18
