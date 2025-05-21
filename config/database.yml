@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: checkboxes_part2_production
+  database: aws_rails_prod
   username: deploy
   password: Rails.application.credentials.dig(:production. :db_password)
